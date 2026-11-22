@@ -1,0 +1,21 @@
+// ==============================================================================
+// Azure Resource Graph KQL Audit Query: Zero-Trust RBAC Role Assignment Verification
+// Author: Tarun Bhatia (LawXTech - lawxtech.in)
+// Purpose: Multi-Scope Least-Privilege IAM Audit across Subscription, RG, Storage & Containers
+// Compliance Frameworks: India DPDP Act 2023 Sec 8(5) | ISO/IEC 27001 A.9 | PCI-DSS Req 7
+// ==============================================================================
+
+authorizationresources
+| where type == "microsoft.authorization/roleassignments"
+| extend principalId      = tostring(properties.principalId),
+         principalType    = tostring(properties.principalType),
+         roleDefinitionId = tostring(properties.roleDefinitionId),
+         scope            = tostring(properties.scope)
+| join kind=leftouter (
+    authorizationresources
+    | where type == "microsoft.authorization/roledefinitions"
+    | extend roleDefinitionId = id,
+             roleName         = tostring(properties.roleName)
+) on roleDefinitionId
+| project scope, principalId, principalType, roleName
+| order by scope asc
