@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarun Bhatia — Privacy Engineer &amp; Data Governance Architect | LawXTech</title>
+    <meta name="description" content="Portfolio of Tarun Bhatia — Privacy Engineer specializing in Microsoft Purview, Azure RBAC, Entra ID PIM, DLP, eDiscovery Premium, DPDP Act 2023, and Australian Privacy Act.">
+    <meta property="og:title" content="Tarun Bhatia — Privacy Engineer | LawXTech">
+    <meta property="og:description" content="End-to-end Zero-Trust privacy governance architecture across Microsoft Purview, Azure, and Entra ID — Nexora Consulting Case Study">
+    <meta property="og:url" content="https://lawxtech.in">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ═══════════════════════════════════════════
+         NAVIGATION
+    ═══════════════════════════════════════════ -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="brand-icon">⚖</span>
+                <span class="brand-name">LawXTech</span>
+                <span class="brand-dot">·</span>
+                <span class="brand-sub">lawxtech.in</span>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#case-study" class="nav-link">Case Study</a>
+                <a href="#engineering" class="nav-link">Engineering</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <button class="nav-mobile-btn" id="mobileBtn" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════════ -->
+    <section id="hero">
+        <div class="hero-bg">
+            <div class="hero-grid-pattern"></div>
+            <div class="hero-glow glow-blue"></div>
+            <div class="hero-glow glow-purple"></div>
+            <div class="hero-glow glow-cyan"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-available">
+                <span class="avail-dot"></span>
+                Available for Privacy Engineering &amp; Compliance Roles
+            </div>
+            <h1 class="hero-name">Tarun Bhatia</h1>
+            <h2 class="hero-title">Privacy Engineer &amp; Data Governance Architect</h2>
+            <p class="hero-desc">
+                Translating statutory legal obligations into automated cloud controls — engineering
+                <strong>Zero-Trust privacy governance</strong> across Microsoft Purview, Azure, and Entra ID
+                for cross-border enterprises under <strong>India DPDP Act 2023</strong>, <strong>Australian Privacy Act 1988</strong>, and <strong>PCI-DSS</strong>.
+            </p>
+            <div class="hero-tags">
+                <span class="htag">DPDP Act 2023</span>
+                <span class="htag">Australian Privacy Act</span>
+                <span class="htag">Microsoft Purview</span>
+                <span class="htag">Zero Trust</span>
+                <span class="htag">PCI-DSS</span>
+                <span class="htag">eDiscovery Premium</span>
+                <span class="htag">KQL</span>
+            </div>
+            <div class="hero-cta">
+                <a href="#case-study" class="btn btn-primary">View Case Study ↓</a>
+                <a href="https://github.com/tbinitial-cyber/nexora-portfolio" target="_blank" rel="noopener" class="btn btn-outline">GitHub ↗</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hstat">
+                    <div class="hstat-num">30</div>
+                    <div class="hstat-label">Evidence Screenshots</div>
+                </div>
+                <div class="hstat-divider"></div>
+                <div class="hstat">
+                    <div class="hstat-num">6</div>
+                    <div class="hstat-label">Architecture Acts</div>
+                </div>
+                <div class="hstat-divider"></div>
+                <div class="hstat">
+                    <div class="hstat-num">2</div>
+                    <div class="hstat-label">Regulatory Frameworks</div>
+                </div>
+                <div class="hstat-divider"></div>
+                <div class="hstat">
+                    <div class="hstat-num">11</div>
+                    <div class="hstat-label">RBAC Assignments</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-hint">
+            <div class="scroll-line"></div>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         ABOUT
+    ═══════════════════════════════════════════ -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-eyebrow">About the Project</div>
+            <h2 class="section-title">Nexora Consulting: Enterprise Privacy Architecture</h2>
+            <div class="about-grid">
+                <div class="about-left">
+                    <p>Cross-border consulting firms face a difficult operational reality: employees need fast cloud collaboration and generative AI tools to serve clients, yet a single misdirected email or over-permissive folder can trigger severe statutory penalties.</p>
+                    <p><strong>Nexora Consulting</strong> is a simulated cross-border enterprise operating across <strong>India and Australia</strong>, handling two high-risk categories of personal data every day:</p>
+                    <ul class="about-list">
+                        <li>
+                            <span class="list-flag">🇮🇳</span>
+                            <div>
+                                <strong>Indian Employee &amp; Vendor PII</strong> — Governed by India's Digital Personal Data Protection Act, 2023 (DPDP Act), including Permanent Account Numbers (PAN), payroll identifiers, and vendor banking records.
+                            </div>
+                        </li>
+                        <li>
+                            <span class="list-flag">🇦🇺</span>
+                            <div>
+                                <strong>Australian Disability Healthcare Records (NDIS)</strong> — Governed by the Australian Privacy Act 1988 (Australian Privacy Principles — APPs), including NDIS Participant identifiers and support coordination plans.
+                            </div>
+                        </li>
+                    </ul>
+                    <p>Rather than relying on static PDF policies or manual reminders, I engineered an end-to-end <strong>Zero-Trust privacy governance architecture</strong> — converting statutory legal obligations directly into automated cloud guardrails.</p>
+                    <div class="about-disclaimer">
+                        <span class="disc-icon">ℹ</span>
+                        <span>All organizations, users, and data in this case study are <strong>fictional</strong> and created solely for demonstrating enterprise privacy engineering skills.</span>
+                    </div>
+                </div>
+                <div class="about-right">
+                    <div class="about-card">
+                        <h3 class="about-card-title">Regulatory Frameworks</h3>
+                        <div class="framework-item">
+                            <div class="fw-flag">🇮🇳</div>
+                            <div>
+                                <div class="fw-name">India DPDP Act 2023</div>
+                                <div class="fw-desc">Digital Personal Data Protection Act — Sections 6, 8(5), 11</div>
+                            </div>
+                        </div>
+                        <div class="framework-item">
+                            <div class="fw-flag">🇦🇺</div>
+                            <div>
+                                <div class="fw-name">Australian Privacy Act 1988</div>
+                                <div class="fw-desc">Australian Privacy Principles (APPs) — APP 6, APP 11, APP 12</div>
+                            </div>
+                        </div>
+                        <div class="framework-item">
+                            <div class="fw-flag">💳</div>
+                            <div>
+                                <div class="fw-name">PCI-DSS</div>
+                                <div class="fw-desc">Payment Card Industry Data Security Standard</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-card mt-16">
+                        <h3 class="about-card-title">Cloud Stack</h3>
+                        <div class="stack-list">
+                            <div class="stack-item"><span class="si-badge purview">P</span><span>Microsoft Purview (Data Map, DLP, eDiscovery, Information Protection)</span></div>
+                            <div class="stack-item"><span class="si-badge entra">E</span><span>Microsoft Entra ID &amp; Privileged Identity Management (PIM)</span></div>
+                            <div class="stack-item"><span class="si-badge azure">Az</span><span>Azure Blob Storage, Azure SQL, Azure Resource Groups</span></div>
+                            <div class="stack-item"><span class="si-badge ps">PS</span><span>Exchange Online PowerShell V3</span></div>
+                            <div class="stack-item"><span class="si-badge kql">KQL</span><span>Kusto Query Language — Azure Resource Graph Explorer</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SKILLS
+    ═══════════════════════════════════════════ -->
+    <section id="skills" class="section section-alt">
+        <div class="container">
+            <div class="section-eyebrow">Technical Expertise</div>
+            <h2 class="section-title">Skills &amp; Technologies</h2>
+            <div class="skills-grid">
+                <div class="skill-card reveal">
+                    <div class="skill-icon">🔐</div>
+                    <h3>Identity &amp; Access</h3>
+                    <ul>
+                        <li>Microsoft Entra ID</li>
+                        <li>Privileged Identity Management (PIM)</li>
+                        <li>Role-Based Security Groups (12 Groups)</li>
+                        <li>Zero Standing Privileges</li>
+                        <li>MFA &amp; Break-Glass Accounts</li>
+                    </ul>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-icon">☁️</div>
+                    <h3>Cloud Infrastructure</h3>
+                    <ul>
+                        <li>Azure Resource Groups &amp; RBAC</li>
+                        <li>Azure Blob Storage (Hierarchical IAM)</li>
+                        <li>Azure SQL &amp; Managed Identities</li>
+                        <li>Data Residency (Central India)</li>
+                        <li>Azure Resource Graph Explorer</li>
+                    </ul>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-icon">🗂️</div>
+                    <h3>Data Governance</h3>
+                    <ul>
+                        <li>Microsoft Purview Data Map</li>
+                        <li>Automated PII Classification</li>
+                        <li>Sensitivity Labels &amp; Encryption</li>
+                        <li>Custom Regex Classifiers (NDIS)</li>
+                        <li>Unified Catalog &amp; Asset Indexing</li>
+                    </ul>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-icon">🛡️</div>
+                    <h3>DLP &amp; AI Governance</h3>
+                    <ul>
+                        <li>Data Loss Prevention Policies</li>
+                        <li>Auto-Labeling Simulation</li>
+                        <li>Microsoft Copilot DLP Guardrails</li>
+                        <li>Real-Time Exfiltration Blocking</li>
+                        <li>eDiscovery Premium (DSAR)</li>
+                    </ul>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-icon">⚖️</div>
+                    <h3>Privacy &amp; Compliance</h3>
+                    <ul>
+                        <li>India DPDP Act 2023</li>
+                        <li>Australian Privacy Act (APPs)</li>
+                        <li>DSAR Fulfillment &amp; Redaction</li>
+                        <li>Chain-of-Custody Audit Trails</li>
+                        <li>Generative AI Acceptable Use Policy</li>
+                    </ul>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-icon">💻</div>
+                    <h3>Automation &amp; Querying</h3>
+                    <ul>
+                        <li>Exchange Online PowerShell V3</li>
+                        <li>Kusto Query Language (KQL)</li>
+                        <li>Unified Audit Log Activation</li>
+                        <li>Azure Resource Graph Queries</li>
+                        <li>Tenant Hydration &amp; Compliance Setup</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         CASE STUDY — 6 ACTS
+    ═══════════════════════════════════════════ -->
+    <section id="case-study" class="section">
+        <div class="container">
+            <div class="section-eyebrow">Nexora Consulting Case Study</div>
+            <h2 class="section-title">Enterprise Privacy Architecture in 6 Acts</h2>
+            <p class="section-desc">A complete end-to-end Zero-Trust privacy governance implementation — from identity provisioning to live DLP blocking, Copilot AI guardrails, and statutory DSAR fulfillment across two regulatory jurisdictions.</p>
+
+            <div class="acts-container">
+
+                <!-- ── ACT 1 ── -->
+                <div class="act-card reveal" id="act1">
+                    <div class="act-header" onclick="toggleAct('act1')">
+                        <div class="act-num-badge">01</div>
+                        <div class="act-header-content">
+                            <div class="act-eyebrow">Act 1 · Screenshots 01–05</div>
+                            <h3 class="act-title">Identity Foundation &amp; Zero-Standing-Privilege Security</h3>
+                            <div class="act-tech-tags">
+                                <span class="ttag entra-tag">Entra ID</span>
+                                <span class="ttag">PIM</span>
+                                <span class="ttag">Security Groups</span>
+                                <span class="ttag">Zero Trust</span>
+                            </div>
+                        </div>
+                        <span class="act-toggle-icon">▼</span>
+                    </div>
+                    <div class="act-body active">
+                        <div class="act-challenge">
+                            <span class="ch-icon">⚖️</span>
+                            <div><strong>Legal &amp; Security Challenge:</strong> Under DPDP Act Section 8(5) and Australian APP 11, data fiduciaries must enforce technical safeguards against unauthorized internal access. Standing administrative rights create a critical insider-risk exposure.</div>
+                        </div>
+                        <div class="act-steps">
+                            <div class="step-item">
+                                <div class="step-badge">01</div>
+                                <div><strong>Workforce Directory Provisioning:</strong> Provisioned 26 directory identities across Nexora's Indian and Australian teams, separating regular business analysts from dedicated privacy leadership (DPO) and break-glass recovery accounts.</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-badge">02–03</div>
+                                <div><strong>Role-Based Security Groups (12 Groups):</strong> Replaced individual user permissions with 12 role-segmented Entra Security Groups — SG-NEX-All-Employees, SG-NEX-Legal-Compliance, SG-NEX-Privacy-Operations, SG-NEX-IT-Security, SG-NEX-Finance, SG-NEX-HR, and more — so governance policies scale cleanly by department.</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-badge">04</div>
+                                <div><strong>Just-In-Time Privilege Elevation (Entra PIM):</strong> Enforced zero standing privileges for Nexora's Data Protection Officer. Rather than holding permanent admin rights during routine work, the DPO holds <em>Eligible</em> assignments for Azure Information Protection Administrator and Compliance Administrator — activated only when needed with MFA and business justification.</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-badge">05</div>
+                                <div><strong>Out-of-Band Break-Glass Isolation:</strong> Isolated Global Administrator strictly as a dedicated emergency recovery account, separated from day-to-day privacy and compliance administration — zero routine usage.</div>
+                            </div>
+                        </div>
+                        <div class="screenshot-grid" id="sg-act1">
+                            <div class="ss-card" onclick="openLightbox(0)"><img src="assets/screenshots/01-entra-employee-directory.png.png" alt="Entra Employee Directory" loading="lazy"><div class="ss-caption">01 — Workforce Directory (26 Users)</div></div>
+                            <div class="ss-card" onclick="openLightbox(1)"><img src="assets/screenshots/02-entra-security-groups-part1.png.png" alt="Security Groups 1" loading="lazy"><div class="ss-caption">02 — Security Groups (1/2)</div></div>
+                            <div class="ss-card" onclick="openLightbox(2)"><img src="assets/screenshots/03-entra-security-groups-part2.png.png" alt="Security Groups 2" loading="lazy"><div class="ss-caption">03 — Security Groups (2/2)</div></div>
+                            <div class="ss-card" onclick="openLightbox(3)"><img src="assets/screenshots/04-pim-dpo-eligible-roles.png.png" alt="PIM DPO Roles" loading="lazy"><div class="ss-caption">04 — PIM JIT Elevation</div></div>
+                            <div class="ss-card" onclick="openLightbox(4)"><img src="assets/screenshots/05-pim-breakglass-admin.png.png" alt="Break-Glass Admin" loading="lazy"><div class="ss-caption">05 — Break-Glass Admin</div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── ACT 2 ── -->
+                <div class="act-card reveal" id="act2">
+                    <div class="act-header" onclick="toggleAct('act2')">
+                        <div class="act-num-badge">02</div>
+                        <div class="act-header-content">
+                            <div class="act-eyebrow">Act 2 · Screenshots 06–10 + 30</div>
+                            <h3 class="act-title">Cloud Data Residency &amp; Hierarchical Azure RBAC</h3>
+                            <div class="act-tech-tags">
+                                <span class="ttag azure-tag">Azure</span>
+                                <span class="ttag">RBAC</span>
+                                <span class="ttag">Data Sovereignty</span>
+                                <span class="ttag kql-tag">KQL</span>
+                            </div>
+                        </div>
+                        <span class="act-toggle-icon">▼</span>
+                    </div>
+                    <div class="act-body">
+                        <div class="act-challenge">
+                            <span class="ch-icon">⚖️</span>
+                            <div><strong>Legal &amp; Security Challenge:</strong> Cross-border consulting firms must demonstrate regional data sovereignty and ensure storage administrators cannot arbitrarily read confidential HR or Finance datasets.</div>
+                        </div>
+                        <div class="act-steps">
+                            <div class="step-item">
+                                <div class="step-badge">06–07</div>
+                                <div><strong>Central India Data Sovereignty:</strong> Deployed Nexora's entire governance infrastructure inside <em>Central India</em> (<code>rg-nexora-privacy-lab-dev-001</code>), encompassing the Microsoft Purview governance account (<code>purview-nexora-gov-001</code>), segregated Finance and HR storage accounts (<code>stnexorafinance001</code>, <code>stnexorahrdev001</code>), and Azure SQL (<code>sql-nexora-dev-001</code>).</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-badge">08</div>
+                                <div><strong>Purview Governance Plane RBAC:</strong> Locked down administrative control over <code>purview-nexora-gov-001</code> so security auditors can inspect governance posture without altering classification rules.</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-badge">09–10</div>
+                                <div><strong>Hierarchical Least-Privilege Storage IAM:</strong> Applied two-tier RBAC separation on <code>stnexorafinance001</code>. At the storage-account level: read-only metadata visibility. At the <code>finance-documents</code> container level: SG-NEX-Finance holds <em>Storage Blob Data Contributor</em> for uploads, while SG-NEX-Privacy-Operations and Purview's System-Assigned Managed Identity are restricted to <em>Storage Blob Data Reader</em>.</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-badge">30</div>
+                                <div><strong>KQL Audit — All 11 RBAC Assignments Verified:</strong> Instead of manually clicking through 5 different Azure panels, wrote a Kusto Query Language (KQL) query in Azure Resource Graph Explorer to pull every RBAC role assignment across the subscription into one audit table — proving least-privilege access in seconds.</div>
+                            </div>
+                        </div>
+                        <div class="kql-block">
+                            <div class="kql-top-bar">
+                                <span class="kql-pill">KQL</span>
+                                <span class="kql-title">Azure Resource Graph — RBAC Subscription Audit</span>
+                                <button class="kql-copy" onclick="copyKQL(this)">Copy</button>
+                            </div>
+                            <pre class="kql-code"><code>authorizationresources
+| where type == "microsoft.authorization/roleassignments"
+| extend principalId     = tostring(properties.principalId),
+         principalType   = tostring(properties.principalType),
+         roleDefinitionId = tostring(properties.roleDefinitionId),
+         scope            = tostring(properties.scope)
+| join kind=leftouter (
+    authorizationresources
+    | where type == "microsoft.authorization/roledefinitions"
+    | extend roleDefinitionId = id,
+             roleName = tostring(properties.roleName)
+) on roleDefinitionId
+| project scope, principalId, principalType, roleName
+| order by scope asc</code></pre>
+                        </div>
+                        <div class="rbac-table-wrap">
+                            <h4 class="table-heading">KQL Output — All 11 Verified RBAC Assignments</h4>
+                            <div class="table-scroll">
+                                <table class="rbac-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Scope Level</th>
+                                            <th>Identity / Group</th>
+                                            <th>Azure RBAC Role</th>
+                                            <th>Security Purpose</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td><span class="scope-badge scope-sub">Subscription</span></td><td>Tarun Bhatia (Break-Glass Owner)</td><td><span class="role-pill role-owner">Owner</span></td><td>Emergency subscription governance</td></tr>
+                                        <tr><td><span class="scope-badge scope-rg">Resource Group</span></td><td>purview-nexora-gov-001 (Managed Identity)</td><td><span class="role-pill role-reader">Storage Blob Data Reader</span></td><td>Keyless Purview scan access across all storage</td></tr>
+                                        <tr><td><span class="scope-badge scope-rg">Resource Group</span></td><td>admin@... (Tenant Admin)</td><td><span class="role-pill role-reader">Reader</span></td><td>Read-only infrastructure visibility</td></tr>
+                                        <tr><td><span class="scope-badge scope-sa">Storage Account</span></td><td>SG-NEX-Finance</td><td><span class="role-pill role-reader">Reader</span></td><td>Management-plane only (no blob read)</td></tr>
+                                        <tr><td><span class="scope-badge scope-sa">Storage Account</span></td><td>SG-NEX-Privacy-Operations</td><td><span class="role-pill role-reader">Reader</span></td><td>Management-plane only (no blob read)</td></tr>
+                                        <tr><td><span class="scope-badge scope-ct">Container (finance-docs)</span></td><td>SG-NEX-Privacy-Operations</td><td><span class="role-pill role-reader">Storage Blob Data Reader</span></td><td>Read-only privacy audit inspection</td></tr>
+                                        <tr><td><span class="scope-badge scope-ct">Container (finance-docs)</span></td><td>SG-NEX-Finance</td><td><span class="role-pill role-contrib">Storage Blob Data Contributor</span></td><td>Write/upload — Finance container ONLY</td></tr>
+                                        <tr><td><span class="scope-badge scope-sa">Storage Account (HR)</span></td><td>SG-NEX-Privacy-Operations</td><td><span class="role-pill role-reader">Reader</span></td><td>Management-plane only (no blob read)</td></tr>
+                                        <tr><td><span class="scope-badge scope-sa">Storage Account (HR)</span></td><td>SG-NEX-HR</td><td><span class="role-pill role-reader">Reader</span></td><td>Management-plane only (no blob read)</td></tr>
+                                        <tr><td><span class="scope-badge scope-ct">Container (hr-docs)</span></td><td>SG-NEX-Privacy-Operations</td><td><span class="role-pill role-reader">Storage Blob Data Reader</span></td><td>Read-only HR privacy audit</td></tr>
+                                        <tr><td><span class="scope-badge scope-ct">Container (hr-docs)</span></td><td>SG-NEX-HR</td><td><span class="role-pill role-contrib">Storage Blob Data Contributor</span></td><td>Write/upload — HR container ONLY</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="zero-trust-proof">
+                                <div class="ztp-item"><span class="ztp-icon">✅</span><div><strong>Strict Departmental Silos:</strong> SG-NEX-HR can only write to <code>hr-documents</code> — zero access to <code>finance-documents</code>. SG-NEX-Finance can only write to <code>finance-documents</code> — zero access to <code>hr-documents</code>.</div></div>
+                                <div class="ztp-item"><span class="ztp-icon">✅</span><div><strong>Privacy Oversight Without Tampering:</strong> SG-NEX-Privacy-Operations can inspect <em>both</em> containers (Reader) but cannot alter or delete any business records.</div></div>
+                            </div>
+                        </div>
+                        <div class="screenshot-grid">
+                            <div class="ss-card" onclick="openLightbox(5)"><img src="assets/screenshots/06-azure-resource-group-central-india.png.png" alt="" loading="lazy"><div class="ss-caption">06 — Resource Group (Central India)</div></div>
+                            <div class="ss-card" onclick="openLightbox(6)"><img src="assets/screenshots/07-azure-all-cloud-resources.png.png" alt="" loading="lazy"><div class="ss-caption">07 — All Cloud Resources</div></div>
+                            <div class="ss-card" onclick="openLightbox(7)"><img src="assets/screenshots/08-purview-account-rbac.png.png" alt="" loading="lazy"><div class="ss-caption">08 — Purview RBAC</div></div>
+                            <div class="ss-card" onclick="openLightbox(8)"><img src="assets/screenshots/09-storage-account-rbac.png.png" alt="" loading="lazy"><div class="ss-caption">09 — Storage Account RBAC</div></div>
+                            <div class="ss-card" onclick="openLightbox(9)"><img src="assets/screenshots/10-container-scoped-rbac.png.png" alt="" loading="lazy"><div class="ss-caption">10 — Container-Scoped RBAC</div></div>
+                            <div class="ss-card" onclick="openLightbox(29)"><img src="assets/screenshots/30-azure-rbac-kql-audit.png" alt="KQL RBAC Audit" loading="lazy"><div class="ss-caption">30 — KQL RBAC Audit</div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── ACT 3 ── -->
+                <div class="act-card reveal" id="act3">
+                    <div class="act-header" onclick="toggleAct('act3')">
+                        <div class="act-num-badge">03</div>
+                        <div class="act-header-content">
+                            <div class="act-eyebrow">Act 3 · Screenshots 11–15</div>
+                            <h3 class="act-title">Automated Data Discovery &amp; PII Classification</h3>
+                            <div class="act-tech-tags">
+                                <span class="ttag purview-tag">Purview Data Map</span>
+                                <span class="ttag">PII Detection</span>
+                                <span class="ttag">Managed Identity</span>
+                            </div>
+                        </div>
+                        <span class="act-toggle-icon">▼</span>
+                    </div>
+                    <div class="act-body">
+                        <div class="act-challenge">
+                            <span class="ch-icon">⚖️</span>
+                            <div><strong>Legal &amp; Security Challenge:</strong> Organizations cannot protect personal data they cannot locate. Manual data-inventory spreadsheets rapidly go stale as new vendor and payroll files are uploaded.</div>
+                        </div>
+                        <div class="act-steps">
+                            <div class="step-item"><div class="step-badge">11–12</div><div><strong>Private Data Lake Staging:</strong> Disabled anonymous public access on <code>finance-documents</code> and staged realistic financial and vendor datasets — <code>bank_reconciliation.csv</code>, <code>card_transactions_test_only.csv</code>, <code>invoice_register.csv</code>, <code>vendor_master.csv</code>.</div></div>
+                            <div class="step-item"><div class="step-badge">13</div><div><strong>Keyless Managed Identity Registration:</strong> Registered Azure Blob Storage inside Microsoft Purview Data Map using System-Assigned Managed Identity authentication — eliminating hardcoded storage keys or shared access signatures entirely.</div></div>
+                            <div class="step-item"><div class="step-badge">14–15</div><div><strong>Automated Column-Level PII Detection:</strong> Executed automated scans that indexed every CSV into Purview Unified Catalog and automatically classified India Permanent Account Number (PAN) (<code>Beneficiary_PAN_TEST</code>) and financial identifiers inside <code>bank_reconciliation.csv</code>.</div></div>
+                        </div>
+                        <div class="screenshot-grid">
+                            <div class="ss-card" onclick="openLightbox(10)"><img src="assets/screenshots/11-azure-private-blob-container.png.png" alt="" loading="lazy"><div class="ss-caption">11 — Private Blob Container</div></div>
+                            <div class="ss-card" onclick="openLightbox(11)"><img src="assets/screenshots/12-azure-staged-financial-datasets.png.png" alt="" loading="lazy"><div class="ss-caption">12 — Staged Financial Datasets</div></div>
+                            <div class="ss-card" onclick="openLightbox(12)"><img src="assets/screenshots/13-purview-datamap-source-registration.png.png" alt="" loading="lazy"><div class="ss-caption">13 — Data Map Registration</div></div>
+                            <div class="ss-card" onclick="openLightbox(13)"><img src="assets/screenshots/14-purview-unified-catalog-assets.png.png" alt="" loading="lazy"><div class="ss-caption">14 — Unified Catalog Assets</div></div>
+                            <div class="ss-card" onclick="openLightbox(14)"><img src="assets/screenshots/15-purview-bank-reconciliation-schema.png.png" alt="" loading="lazy"><div class="ss-caption">15 — PAN Auto-Classified</div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── ACT 4 ── -->
+                <div class="act-card reveal" id="act4">
+                    <div class="act-header" onclick="toggleAct('act4')">
+                        <div class="act-num-badge">04</div>
+                        <div class="act-header-content">
+                            <div class="act-eyebrow">Act 4 · Screenshots 16–22</div>
+                            <h3 class="act-title">Cryptographic Labels, Custom NDIS Regex &amp; Live Leak Prevention</h3>
+                            <div class="act-tech-tags">
+                                <span class="ttag">Sensitivity Labels</span>
+                                <span class="ttag dlp-tag">DLP</span>
+                                <span class="ttag">Custom Classifiers</span>
+                                <span class="ttag live-tag">🔴 Live Proof</span>
+                            </div>
+                        </div>
+                        <span class="act-toggle-icon">▼</span>
+                    </div>
+                    <div class="act-body">
+                        <div class="act-challenge">
+                            <span class="ch-icon">⚖️</span>
+                            <div><strong>Legal &amp; Security Challenge:</strong> Built-in classifiers detect credit cards and national tax IDs, but fail to recognize sector-specific statutory identifiers like Australian NDIS Participant IDs — leaving disability records exposed to accidental external emailing.</div>
+                        </div>
+                        <div class="act-steps">
+                            <div class="step-item"><div class="step-badge">16–17</div><div><strong>Encrypted Sensitivity Labeling:</strong> Engineered custom label <code>Confidential - PII and Financial</code> at Priority 9 (above Public, General, and Confidential) enforcing cryptographic encryption restricted exclusively to Nexora employees, published to SG-NEX-All-Employees with mandatory justification for any downgrade.</div></div>
+                            <div class="step-item"><div class="step-badge">18</div><div><strong>Custom Statutory NDIS Classifier:</strong> Built a custom Sensitive Info Type matching <code>\bNDIS-\d{3}-\d{3}-\d{3}\b</code> within 300 characters of healthcare keywords (NDIS, Participant, Disability, Plan Manager, Support Coordination) — detecting Australian disability record identifiers that no built-in classifier covers.</div></div>
+                            <div class="step-item"><div class="step-badge">19</div><div><strong>Automated Classification Simulation:</strong> Deployed <code>Nexora-AutoLabel-Confidential-PII</code> across Exchange, SharePoint, and OneDrive, capturing live rule matches to automatically upgrade sensitive files to <code>Confidential - PII and Financial</code>.</div></div>
+                            <div class="step-item"><div class="step-badge">20–22</div><div><strong>Real-Time Exfiltration Blocking (Live Proof):</strong> Activated <code>Nexora-PII-Financial-Leak-Prevention</code> across Exchange, SharePoint, OneDrive, and Teams. When an analyst attempted to email synthetic Indian PAN (<code>ZZZPX5001J</code>), Credit Card (<code>4111111111111111</code>), and NDIS Participant ID (<code>NDIS-430-881-922</code>) to an external Gmail — Outlook blocked the transmission immediately with a policy bounce notice.</div></div>
+                        </div>
+                        <div class="live-proof-banner">
+                            <div class="lpb-left">
+                                <div class="lpb-indicator"></div>
+                                <strong>LIVE PROOF</strong>
+                            </div>
+                            <div class="lpb-text">Email containing PAN + Credit Card + NDIS Participant ID sent to external Gmail → Outlook returned <em>"Message Blocked: Confidential Q4 Client &amp; Employee Payout Verification"</em> in real-time. Policy worked as designed — zero data exfiltration.</div>
+                        </div>
+                        <div class="screenshot-grid">
+                            <div class="ss-card" onclick="openLightbox(15)"><img src="assets/screenshots/16-sensitivity-label-priority-9.png.png" alt="" loading="lazy"><div class="ss-caption">16 — Sensitivity Label Priority 9</div></div>
+                            <div class="ss-card" onclick="openLightbox(16)"><img src="assets/screenshots/17-global-label-publishing-policy.png.png" alt="" loading="lazy"><div class="ss-caption">17 — Global Publishing Policy</div></div>
+                            <div class="ss-card" onclick="openLightbox(17)"><img src="assets/screenshots/18-custom-ndis-regex-classifier.png.png" alt="" loading="lazy"><div class="ss-caption">18 — NDIS Regex Classifier</div></div>
+                            <div class="ss-card" onclick="openLightbox(18)"><img src="assets/screenshots/19-auto-labeling-simulation-matches.png.png" alt="" loading="lazy"><div class="ss-caption">19 — Auto-Label Simulation</div></div>
+                            <div class="ss-card" onclick="openLightbox(19)"><img src="assets/screenshots/20-active-dlp-policies-overview.png.png" alt="" loading="lazy"><div class="ss-caption">20 — Active DLP Policies</div></div>
+                            <div class="ss-card" onclick="openLightbox(20)"><img src="assets/screenshots/21-m365-external-dlp-rule.png.png" alt="" loading="lazy"><div class="ss-caption">21 — M365 External DLP Rule</div></div>
+                            <div class="ss-card ss-live" onclick="openLightbox(21)"><img src="assets/screenshots/22-live-outlook-dlp-block-proof.png.png" alt="" loading="lazy"><div class="ss-caption">22 — 🔴 Live DLP Block (Outlook)</div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── ACT 5 ── -->
+                <div class="act-card reveal" id="act5">
+                    <div class="act-header" onclick="toggleAct('act5')">
+                        <div class="act-num-badge">05</div>
+                        <div class="act-header-content">
+                            <div class="act-eyebrow">Act 5 · Screenshots 23–24</div>
+                            <h3 class="act-title">Copilot &amp; Generative AI Governance</h3>
+                            <div class="act-tech-tags">
+                                <span class="ttag copilot-tag">Copilot DLP</span>
+                                <span class="ttag">AI Governance</span>
+                                <span class="ttag live-tag">🔴 Live Proof</span>
+                            </div>
+                        </div>
+                        <span class="act-toggle-icon">▼</span>
+                    </div>
+                    <div class="act-body">
+                        <div class="act-challenge">
+                            <span class="ch-icon">⚖️</span>
+                            <div><strong>Legal &amp; Security Challenge:</strong> Generative AI assistants create a rapid shadow-exfiltration channel when employees paste raw personal data into AI prompts — violating purpose limitation and data minimization duties under DPDP Act Section 6 and APP 6.</div>
+                        </div>
+                        <div class="act-steps">
+                            <div class="step-item"><div class="step-badge">23</div><div><strong>Dedicated Copilot DLP Guardrail:</strong> Activated <code>Nexora-Copilot-PII-Protection</code> across Microsoft Copilot, Copilot Chat, and Copilot Cowork — blocking AI ingestion of Indian PAN, Credit Card numbers, and <code>Confidential - PII and Financial</code> labelled content. Paired with a formal Generative AI Acceptable Use Policy governing external LLMs (ChatGPT, Gemini, Claude).</div></div>
+                            <div class="step-item"><div class="step-badge">24</div><div><strong>Live Prompt Interception Proof:</strong> Tested by pasting synthetic PAN, Credit Card, and NDIS identifiers directly into Microsoft 365 Copilot Chat — Copilot immediately refused processing with an organizational policy restriction alert, proving the guardrail works in real-time.</div></div>
+                        </div>
+                        <div class="screenshot-grid">
+                            <div class="ss-card" onclick="openLightbox(22)"><img src="assets/screenshots/23-copilot-dlp-policy-config.png.png" alt="" loading="lazy"><div class="ss-caption">23 — Copilot DLP Policy Config</div></div>
+                            <div class="ss-card ss-live" onclick="openLightbox(23)"><img src="assets/screenshots/24-live-copilot-prompt-block-proof.png.png" alt="" loading="lazy"><div class="ss-caption">24 — 🔴 Live Copilot Block</div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── ACT 6 ── -->
+                <div class="act-card reveal" id="act6">
+                    <div class="act-header" onclick="toggleAct('act6')">
+                        <div class="act-num-badge">06</div>
+                        <div class="act-header-content">
+                            <div class="act-eyebrow">Act 6 · Screenshots 25–29</div>
+                            <h3 class="act-title">Statutory DSAR Fulfillment &amp; Third-Party Redaction</h3>
+                            <div class="act-tech-tags">
+                                <span class="ttag ediscovery-tag">eDiscovery Premium</span>
+                                <span class="ttag">DSAR</span>
+                                <span class="ttag">Chain-of-Custody</span>
+                            </div>
+                        </div>
+                        <span class="act-toggle-icon">▼</span>
+                    </div>
+                    <div class="act-body">
+                        <div class="act-challenge">
+                            <span class="ch-icon">⚖️</span>
+                            <div><strong>Legal &amp; Security Challenge:</strong> Under India's DPDP Act 2023 (Section 11) and Australian APP 12, individuals have the right to access their personal data — but fulfilling an access request must never expose third-party personal data stored inside multi-record corporate spreadsheets.</div>
+                        </div>
+                        <div class="act-steps">
+                            <div class="step-item"><div class="step-badge">25</div><div><strong>Multi-Record SharePoint Repository:</strong> Provisioned private team site <code>Nexora-Finance-Portal</code> hosting four vendor and financial datasets (<code>bank_reconciliation.csv</code>, <code>card_transactions_test_only.csv</code>, <code>invoice_register.csv</code>, <code>vendor_master.csv</code>).</div></div>
+                            <div class="step-item"><div class="step-badge">26–27</div><div><strong>Targeted DSAR Discovery (DSAR-2026-001):</strong> Created Purview eDiscovery (Premium) case <code>DSAR-2026-001-Vendor-and-Employee-Access-Request</code> and queried Demo Vendor 0002 Group across SharePoint and Exchange — accurately isolating the exact 3 matching files (272,103 bytes) while excluding unrelated card logs.</div></div>
+                            <div class="step-item"><div class="step-badge">28</div><div><strong>Third-Party PII Redaction Governance:</strong> Collected all 3 matched CSVs into <code>DSAR-2026-001-Review-Set</code>, identified unrelated vendors' PAN numbers co-located inside <code>vendor_master.csv</code>, and applied custom tag <code>Requires-Redaction</code> — so third-party records are stripped before external release.</div></div>
+                            <div class="step-item"><div class="step-badge">29</div><div><strong>Case-Sandboxed Reviewer RBAC &amp; Chain-of-Custody Audit:</strong> Assigned Purview Role Group Reviewer (backed by SG-NEX-Legal-Compliance) strictly to DSAR-2026-001 — sandboxing reviewers to this single case without raw export privileges — and exported a 4-file DSAR Chain-of-Custody Audit Report (<code>Summary.csv</code>, <code>Locations.csv</code>, <code>Settings.csv</code>, <code>Statistics.csv</code>) backed by live Unified Audit Logging.</div></div>
+                        </div>
+                        <div class="screenshot-grid">
+                            <div class="ss-card" onclick="openLightbox(24)"><img src="assets/screenshots/25-sharepoint-finance-portal-datasets.png.png" alt="" loading="lazy"><div class="ss-caption">25 — SharePoint Finance Portal</div></div>
+                            <div class="ss-card" onclick="openLightbox(25)"><img src="assets/screenshots/26-ediscovery-dsar-case.png.png" alt="" loading="lazy"><div class="ss-caption">26 — eDiscovery DSAR Case</div></div>
+                            <div class="ss-card" onclick="openLightbox(26)"><img src="assets/screenshots/27-ediscovery-dsar-search-query.png.png" alt="" loading="lazy"><div class="ss-caption">27 — DSAR Search Query</div></div>
+                            <div class="ss-card" onclick="openLightbox(27)"><img src="assets/screenshots/28-ediscovery-reviewset-redaction-tag.png.png" alt="" loading="lazy"><div class="ss-caption">28 — Review Set &amp; Redaction Tag</div></div>
+                            <div class="ss-card" onclick="openLightbox(28)"><img src="assets/screenshots/29-ediscovery-chain-of-custody-audit.png.png" alt="" loading="lazy"><div class="ss-caption">29 — Chain-of-Custody Audit</div></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /acts-container -->
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         ENGINEERING NOTES
+    ═══════════════════════════════════════════ -->
+    <section id="engineering" class="section section-alt">
+        <div class="container">
+            <div class="section-eyebrow">Engineering Notes</div>
+            <h2 class="section-title">PowerShell &amp; Automation</h2>
+            <p class="section-desc">Key automation artifacts used to hydrate the tenant, activate audit logging, and configure compliance controls programmatically.</p>
+            <div class="eng-grid">
+                <div class="eng-card reveal">
+                    <div class="eng-card-header">
+                        <span class="eng-icon">⚡</span>
+                        <h3>Exchange Online PowerShell V3</h3>
+                    </div>
+                    <p>Connected via <code>Connect-ExchangeOnline</code> (V3 module) to activate Unified Audit Logging across the tenant — a mandatory prerequisite for eDiscovery Premium chain-of-custody records and DLP policy violation logs.</p>
+                    <div class="eng-code-block">
+                        <pre><code>Connect-ExchangeOnline -UserPrincipalName admin@nexora.onmicrosoft.com
+Set-AdminAuditLogConfig -UnifiedAuditLogIngestionEnabled $true
+Get-AdminAuditLogConfig | Select UnifiedAuditLogIngestionEnabled</code></pre>
+                    </div>
+                </div>
+                <div class="eng-card reveal">
+                    <div class="eng-card-header">
+                        <span class="eng-icon">🔍</span>
+                        <h3>KQL — Azure Resource Graph</h3>
+                    </div>
+                    <p>Used Kusto Query Language in Azure Resource Graph Explorer to produce a single consolidated RBAC audit table across all subscription scopes — validating all 11 role assignments meet least-privilege requirements without manual portal navigation.</p>
+                    <div class="eng-code-block">
+                        <pre><code>authorizationresources
+| where type == "microsoft.authorization/roleassignments"
+| extend roleName = tostring(properties.roleName)
+| project scope, principalType, roleName
+| order by scope asc</code></pre>
+                    </div>
+                </div>
+                <div class="eng-card reveal">
+                    <div class="eng-card-header">
+                        <span class="eng-icon">🏷️</span>
+                        <h3>Custom NDIS Regex Classifier</h3>
+                    </div>
+                    <p>Authored a custom Sensitive Information Type in Microsoft Purview using regex pattern <code>\bNDIS-\d{3}-\d{3}-\d{3}\b</code> with proximity matching to NDIS healthcare keywords — filling a critical gap where no built-in classifier exists for Australian disability participant identifiers.</p>
+                    <div class="eng-code-block">
+                        <pre><code>Pattern: \bNDIS-\d{3}-\d{3}-\d{3}\b
+Proximity: 300 characters
+Keywords: NDIS, Participant, Disability,
+          Plan Manager, Support Coordination
+Confidence: High (85%+)</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         CONTACT
+    ═══════════════════════════════════════════ -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-eyebrow">Get In Touch</div>
+            <h2 class="section-title">Let's Connect</h2>
+            <div class="contact-grid">
+                <div class="contact-left">
+                    <p class="contact-intro">I'm open to privacy engineering, data governance, and legal-tech compliance roles — particularly at the intersection of cloud infrastructure and statutory regulatory frameworks.</p>
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <span class="ci-icon">🌐</span>
+                            <div>
+                                <div class="ci-label">Website</div>
+                                <div class="ci-value"><a href="https://lawxtech.in" target="_blank" rel="noopener">lawxtech.in</a></div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="ci-icon">⚖️</span>
+                            <div>
+                                <div class="ci-label">Focus</div>
+                                <div class="ci-value">Privacy Engineering · Data Governance · LawXTech</div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="ci-icon">📍</span>
+                            <div>
+                                <div class="ci-label">Base</div>
+                                <div class="ci-value">India — open to remote &amp; Australia-based roles</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <div class="contact-card">
+                        <h3>What I bring</h3>
+                        <ul class="brings-list">
+                            <li>✅ Hands-on Microsoft Purview &amp; Entra ID implementation</li>
+                            <li>✅ Statutory knowledge of DPDP Act 2023 &amp; Australian Privacy Act</li>
+                            <li>✅ Zero-Trust architecture design &amp; JIT privilege engineering</li>
+                            <li>✅ Live DLP &amp; Copilot AI guardrail proof-of-concept</li>
+                            <li>✅ eDiscovery Premium DSAR fulfillment with chain-of-custody</li>
+                            <li>✅ KQL automation for RBAC audit at scale</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         FOOTER
+    ═══════════════════════════════════════════ -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="brand-icon">⚖</span>
+                <span class="brand-name">LawXTech</span>
+                <span class="footer-tagline">— Privacy Engineering Portfolio</span>
+            </div>
+            <div class="footer-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#case-study">Case Study</a>
+                <a href="#engineering">Engineering</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-disclaimer">
+                All organizations, users, and data referenced herein are <strong>fictional</strong> and created solely for demonstrating enterprise privacy engineering capabilities. No real personal data was used.
+            </div>
+            <div class="footer-copy">© 2026 Tarun Bhatia · lawxtech.in · Built with zero-trust and zero shortcuts.</div>
+        </div>
+    </footer>
+
+    <!-- ═══════════════════════════════════════════
+         LIGHTBOX
+    ═══════════════════════════════════════════ -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <button class="lb-close" onclick="closeLightbox()">✕</button>
+        <button class="lb-prev" onclick="event.stopPropagation(); lbNav(-1)">‹</button>
+        <div class="lb-content" onclick="event.stopPropagation()">
+            <img id="lb-img" src="" alt="">
+            <div id="lb-caption" class="lb-caption"></div>
+        </div>
+        <button class="lb-next" onclick="event.stopPropagation(); lbNav(1)">›</button>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         JAVASCRIPT
+    ═══════════════════════════════════════════ -->
+    <script>
+    // ── Lightbox ──────────────────────────────────────────────
+    const screenshots = [
+        { src: 'assets/screenshots/01-entra-employee-directory.png.png',           cap: '01 — Workforce Directory (26 Users)' },
+        { src: 'assets/screenshots/02-entra-security-groups-part1.png.png',        cap: '02 — Security Groups (1/2)' },
+        { src: 'assets/screenshots/03-entra-security-groups-part2.png.png',        cap: '03 — Security Groups (2/2)' },
+        { src: 'assets/screenshots/04-pim-dpo-eligible-roles.png.png',             cap: '04 — PIM JIT Elevation' },
+        { src: 'assets/screenshots/05-pim-breakglass-admin.png.png',               cap: '05 — Break-Glass Admin' },
+        { src: 'assets/screenshots/06-azure-resource-group-central-india.png.png', cap: '06 — Resource Group (Central India)' },
+        { src: 'assets/screenshots/07-azure-all-cloud-resources.png.png',          cap: '07 — All Cloud Resources' },
+        { src: 'assets/screenshots/08-purview-account-rbac.png.png',               cap: '08 — Purview RBAC' },
+        { src: 'assets/screenshots/09-storage-account-rbac.png.png',               cap: '09 — Storage Account RBAC' },
+        { src: 'assets/screenshots/10-container-scoped-rbac.png.png',              cap: '10 — Container-Scoped RBAC' },
+        { src: 'assets/screenshots/11-azure-private-blob-container.png.png',       cap: '11 — Private Blob Container' },
+        { src: 'assets/screenshots/12-azure-staged-financial-datasets.png.png',    cap: '12 — Staged Financial Datasets' },
+        { src: 'assets/screenshots/13-purview-datamap-source-registration.png.png',cap: '13 — Data Map Registration' },
+        { src: 'assets/screenshots/14-purview-unified-catalog-assets.png.png',     cap: '14 — Unified Catalog Assets' },
+        { src: 'assets/screenshots/15-purview-bank-reconciliation-schema.png.png', cap: '15 — PAN Auto-Classified' },
+        { src: 'assets/screenshots/16-sensitivity-label-priority-9.png.png',       cap: '16 — Sensitivity Label Priority 9' },
+        { src: 'assets/screenshots/17-global-label-publishing-policy.png.png',     cap: '17 — Global Publishing Policy' },
+        { src: 'assets/screenshots/18-custom-ndis-regex-classifier.png.png',       cap: '18 — NDIS Regex Classifier' },
+        { src: 'assets/screenshots/19-auto-labeling-simulation-matches.png.png',   cap: '19 — Auto-Label Simulation' },
+        { src: 'assets/screenshots/20-active-dlp-policies-overview.png.png',       cap: '20 — Active DLP Policies' },
+        { src: 'assets/screenshots/21-m365-external-dlp-rule.png.png',             cap: '21 — M365 External DLP Rule' },
+        { src: 'assets/screenshots/22-live-outlook-dlp-block-proof.png.png',       cap: '22 — 🔴 Live DLP Block (Outlook)' },
+        { src: 'assets/screenshots/23-copilot-dlp-policy-config.png.png',          cap: '23 — Copilot DLP Policy Config' },
+        { src: 'assets/screenshots/24-live-copilot-prompt-block-proof.png.png',    cap: '24 — 🔴 Live Copilot Block' },
+        { src: 'assets/screenshots/25-sharepoint-finance-portal-datasets.png.png', cap: '25 — SharePoint Finance Portal' },
+        { src: 'assets/screenshots/26-ediscovery-dsar-case.png.png',               cap: '26 — eDiscovery DSAR Case' },
+        { src: 'assets/screenshots/27-ediscovery-dsar-search-query.png.png',       cap: '27 — DSAR Search Query' },
+        { src: 'assets/screenshots/28-ediscovery-reviewset-redaction-tag.png.png', cap: '28 — Review Set &amp; Redaction Tag' },
+        { src: 'assets/screenshots/29-ediscovery-chain-of-custody-audit.png.png',  cap: '29 — Chain-of-Custody Audit' },
+        { src: 'assets/screenshots/30-azure-rbac-kql-audit.png',                   cap: '30 — KQL RBAC Audit' },
+    ];
+    let lbIndex = 0;
+
+    function openLightbox(i) {
+        lbIndex = i;
+        document.getElementById('lb-img').src = screenshots[i].src;
+        document.getElementById('lb-caption').innerHTML = screenshots[i].cap;
+        document.getElementById('lightbox').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        document.getElementById('lightbox').classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    function lbNav(dir) {
+        lbIndex = (lbIndex + dir + screenshots.length) % screenshots.length;
+        document.getElementById('lb-img').src = screenshots[lbIndex].src;
+        document.getElementById('lb-caption').innerHTML = screenshots[lbIndex].cap;
+    }
+
+    document.addEventListener('keydown', e => {
+        if (!document.getElementById('lightbox').classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') lbNav(1);
+        if (e.key === 'ArrowLeft') lbNav(-1);
+    });
+
+    // ── Act accordion ─────────────────────────────────────────
+    function toggleAct(id) {
+        const card = document.getElementById(id);
+        const body = card.querySelector('.act-body');
+        const icon = card.querySelector('.act-toggle-icon');
+        body.classList.toggle('active');
+        icon.textContent = body.classList.contains('active') ? '▲' : '▼';
+    }
+
+    // ── Navbar scroll ─────────────────────────────────────────
+    window.addEventListener('scroll', () => {
+        const nav = document.getElementById('navbar');
+        nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // ── Mobile menu ───────────────────────────────────────────
+    document.getElementById('mobileBtn').addEventListener('click', () => {
+        document.getElementById('navLinks').classList.toggle('open');
+        document.getElementById('mobileBtn').classList.toggle('open');
+    });
+
+    // Close mobile menu when a link is clicked
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            document.getElementById('navLinks').classList.remove('open');
+            document.getElementById('mobileBtn').classList.remove('open');
+        });
+    });
+
+    // ── Scroll reveal ─────────────────────────────────────────
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // ── Active nav link ───────────────────────────────────────
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navLinks.forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+                });
+            }
+        });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+
+    sections.forEach(s => sectionObserver.observe(s));
+
+    // ── KQL copy button ───────────────────────────────────────
+    function copyKQL(btn) {
+        const code = btn.closest('.kql-block').querySelector('code').innerText;
+        navigator.clipboard.writeText(code).then(() => {
+            btn.textContent = 'Copied!';
+            setTimeout(() => btn.textContent = 'Copy', 2000);
+        });
+    }
+    </script>
+
+</body>
+</html>

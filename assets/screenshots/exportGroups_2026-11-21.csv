@@ -1,0 +1,13 @@
+﻿displayName,id,groupType,membershipType,mail,source,mailEnabled,onPremisesSyncEnabled
+SG-NEX-Customer-Support,068fc2be-64ba-4742-8baa-a40a60e9eb23,Security,assigned,,Cloud,False,
+SG-NEX-Marketing,0c06424f-e9be-4cb1-985c-fbd2773d966d,Security,assigned,,Cloud,False,
+SG-NEX-Finance,1775f7c9-848d-4ef1-9b4f-e248ee405bd4,Security,assigned,,Cloud,False,
+SG-NEX-IT-Security,216156f4-df01-4ad1-ac46-3114ff8d1aeb,Security,assigned,,Cloud,False,
+SG-NEX-Legal-Compliance,77fec40e-a32a-4e2f-b330-3e92a0ac916d,Security,assigned,,Cloud,False,
+SG-NEX-Privacy-Operations,786c376f-e1aa-4e99-bf65-7dfca84ef61f,Security,assigned,,Cloud,False,
+SG-NEX-Sales,88326be6-abc0-4ebb-9de6-5518bf319e22,Security,assigned,,Cloud,False,
+SG-NEX-HR,98e0bd66-9a93-4566-9bb8-00da3907f7ba,Security,assigned,,Cloud,False,
+SG-NEX-Azure-Resource-Contributors,a4593035-4509-40d9-bbee-e388351cc7ba,Security,assigned,,Cloud,False,
+SG-NEX-All-Employees,d2500d60-de2a-4c8a-96c1-a85dafb681e2,Security,assigned,,Cloud,False,
+SG-NEX-Executive,e5f1cbf2-fbc1-487f-9e9d-7e659ace7ef8,Security,assigned,,Cloud,False,
+SG-NEX-Engineering-Product,ee976d13-fce4-45eb-b355-beab7b21a270,Security,assigned,,Cloud,False,

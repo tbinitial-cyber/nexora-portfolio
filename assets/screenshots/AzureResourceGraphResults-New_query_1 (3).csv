@@ -1,0 +1,12 @@
+﻿scope,principalId,principalType,roleName
+"/subscriptions/cb1dee4f-d0b4-4446-8119-17c689aa4674","1a07a14d-83cc-4ec7-a964-57753ed49d1a","User","Owner"
+"/subscriptions/cb1dee4f-d0b4-4446-8119-17c689aa4674/resourceGroups/rg-nexora-privacy-lab-dev-001","c45dbea8-0ae5-482f-99af-cba463d13373","ServicePrincipal","Storage Blob Data Reader"
+"/subscriptions/cb1dee4f-d0b4-4446-8119-17c689aa4674/resourceGroups/rg-nexora-privacy-lab-dev-001","31a04109-480b-452f-b3da-bf9fdf64cec3","User","Reader"
+"/subscriptions/cb1dee4f-d0b4-4446-8119-17c689aa4674/resourceGroups/rg-nexora-privacy-lab-dev-001/providers/Microsoft.Storage/storageAccounts/stnexorafinance001","1775f7c9-848d-4ef1-9b4f-e248ee405bd4","Group","Reader"
+"/subscriptions/cb1dee4f-d0b4-4446-8119-17c689aa4674/resourceGroups/rg-nexora-privacy-lab-dev-001/providers/Microsoft.Storage/storageAccounts/stnexorafinance001","786c376f-e1aa-4e99-bf65-7dfca84ef61f","Group","Reader"
+"/subscriptions/cb1dee4f-d0b4-4446-8119-17c689aa4674/resourceGroups/rg-nexora-privacy-lab-dev-001/providers/Microsoft.Storage/storageAccounts/stnexorafinance001/blobServices/default/containers/finance-documents","786c376f-e1aa-4e99-bf65-7dfca84ef61f","Group","Storage Blob Data Reader"
+"/subscriptions/cb1dee4f-d0b4-4446-8119-17c689aa4674/resourceGroups/rg-nexora-privacy-lab-dev-001/providers/Microsoft.Storage/storageAccounts/stnexorafinance001/blobServices/default/containers/finance-documents","1775f7c9-848d-4ef1-9b4f-e248ee405bd4","Group","Storage Blob Data Contributor"
+"/subscriptions/cb1dee4f-d0b4-4446-8119-17c689aa4674/resourceGroups/rg-nexora-privacy-lab-dev-001/providers/Microsoft.Storage/storageAccounts/stnexorahrdev001","786c376f-e1aa-4e99-bf65-7dfca84ef61f","Group","Reader"
+"/subscriptions/cb1dee4f-d0b4-4446-8119-17c689aa4674/resourceGroups/rg-nexora-privacy-lab-dev-001/providers/Microsoft.Storage/storageAccounts/stnexorahrdev001","98e0bd66-9a93-4566-9bb8-00da3907f7ba","Group","Reader"
+"/subscriptions/cb1dee4f-d0b4-4446-8119-17c689aa4674/resourceGroups/rg-nexora-privacy-lab-dev-001/providers/Microsoft.Storage/storageAccounts/stnexorahrdev001/blobServices/default/containers/hr-documents","786c376f-e1aa-4e99-bf65-7dfca84ef61f","Group","Storage Blob Data Reader"
+"/subscriptions/cb1dee4f-d0b4-4446-8119-17c689aa4674/resourceGroups/rg-nexora-privacy-lab-dev-001/providers/Microsoft.Storage/storageAccounts/stnexorahrdev001/blobServices/default/containers/hr-documents","98e0bd66-9a93-4566-9bb8-00da3907f7ba","Group","Storage Blob Data Contributor"
