@@ -155,8 +155,8 @@
               <h4 style="color: var(--accent-cyan); font-size: 1.05rem; margin-bottom: 12px;">MeitY Notification G.S.R. 843(E) — DPDP Act Phased Commencement Timeline</h4>
               <ul style="font-size: 0.95rem; line-height: 1.8; color: var(--text-2); margin-left: 18px;">
                 <li><strong>13 November 2025 (Immediate Commencement):</strong> Institutional provisions bringing into force Section 1(2), Section 2 (Definitions), Sections 18–26 (Establishment, composition, terms, and proceedings of the Data Protection Board of India), Section 35 (Power to call for information), Sections 38–43 (Penalties adjudication, recovery, and appeals to TDSAT), and Sections 44(1) &amp; 44(3).</li>
-                <li><strong>13 November 2026 (One-Year Commencement):</strong> Section 6(9) (Data Fiduciary obligations regarding registered Consent Managers) and Section 27(1)(d) (Power of the Board to issue interim directions).</li>
-                <li><strong>13 May 2027 (Eighteen-Month Commencement):</strong> Substantive operational mandates taking effect, including Sections 3–5 (Application, Grounds for processing, Notice), Sections 6(1)–6(8) &amp; 6(10) (Substantive Consent requirements and withdrawal), Sections 7–17 (Certain legitimate uses, general obligations of Data Fiduciaries, Significant Data Fiduciary duties, Data Principal rights of access, correction, erasure, grievance redressal, and nomination), Section 27 (general Board powers except (1)(d)), Sections 28–34, Sections 36–37, and Section 44(2).</li>
+                <li><strong>13 November 2026 (One-Year Commencement):</strong> Section 6(9) (Registration of Consent Managers with the Board and conditions of engagement) and Section 27(1)(d) (Power of the Board to inquire into breach of any condition of registration of a Consent Manager).</li>
+                <li><strong>13 May 2027 (Eighteen-Month Commencement):</strong> Substantive operational mandates taking effect, including Sections 3–5 (Application, Grounds for processing, Notice), Sections 6(1)–6(8) &amp; 6(10) (Substantive Consent requirements and withdrawal; Section 6(10) establishing that the Data Fiduciary bears the burden of proving notice and consent), Sections 7–17 (Certain legitimate uses, general obligations of Data Fiduciaries, Significant Data Fiduciary duties, Data Principal rights of access, correction, erasure, grievance redressal, and nomination), Section 27(2) (Board general direction-making power) and remainder of Section 27, Sections 28–34, Sections 36–37, and Section 44(2).</li>
               </ul>
             </div>
 
@@ -194,21 +194,21 @@
                 <tbody>
                   <tr>
                     <td><strong>Section 4</strong></td>
-                    <td>Grounds for Processing</td>
-                    <td>Personal data may be processed only for a lawful purpose for which the Data Principal gave consent, or for certain legitimate uses.</td>
-                    <td>Entra ID directory role boundaries and container-scoped access policies.</td>
+                    <td>Lawful Grounds for Processing</td>
+                    <td>Personal data may be processed only for a lawful purpose for which the Data Principal gave consent under Section 6, or for certain legitimate uses under Section 7.</td>
+                    <td>Entra ID directory role boundaries, container-scoped access policies, and legal-basis assessment.</td>
                   </tr>
                   <tr>
                     <td><strong>Section 5</strong></td>
                     <td>Notice Requirements</td>
-                    <td>Data Fiduciary must give itemised notice before or at the time of requesting consent, specifying data categories, purpose, rights, and grievance officer.</td>
+                    <td>Data Fiduciary must give itemised notice before or at the time of requesting consent, specifying data categories, purpose, rights exercise, and contact details of the DPO or authorized person for queries.</td>
                     <td>Simulated consent notices informing users prior to cloud onboarding.</td>
                   </tr>
                   <tr>
                     <td><strong>Section 6</strong></td>
-                    <td>Consent Framework</td>
-                    <td>Consent must be free, specific, informed, unconditional, and unambiguous with clear affirmative action, limited to necessary personal data. Withdrawal must be as easy as giving consent.</td>
-                    <td>Microsoft 365 Copilot DLP prompt inspection preventing unconsented prompt ingestion into Generative AI models.</td>
+                    <td>Consent Requirements &amp; Burden of Proof</td>
+                    <td>Consent must be free, specific, informed, unconditional, and unambiguous with clear affirmative action, limited to necessary personal data; withdrawal mechanism as easy as giving consent. Data Fiduciary bears the burden of proof under Sec 6(10).</td>
+                    <td>Simulated consent management tracking and affirmative user acknowledgement workflows.</td>
                   </tr>
                   <tr>
                     <td><strong>Section 7</strong></td>
@@ -248,9 +248,9 @@
                   </tr>
                   <tr>
                     <td><strong>Section 11 &amp; Section 12</strong></td>
-                    <td>Data Principal Rights</td>
-                    <td>Right to obtain summary of personal data, processing activities, identities of third parties shared with (Sec 11), and correction, completion, updating, and erasure (Sec 12).</td>
-                    <td>Purview eDiscovery Premium targeted query, third-party PII redaction evaluation, and 4-file audit export.</td>
+                    <td>Data Principal Rights to Information &amp; Correction/Erasure</td>
+                    <td>Section 11: Right to obtain summary of personal data and processing activities, identities of all other Data Fiduciaries and Data Processors with whom personal data was shared, and description of data shared. Section 12: Right to correction, completion, updating, and erasure subject to legal retention.</td>
+                    <td>Purview eDiscovery Premium targeted query, third-party PII redaction evaluation, and 4-file process report export.</td>
                   </tr>
                   <tr>
                     <td><strong>Section 16</strong></td>
@@ -676,15 +676,15 @@
           <div id="purview-lifecycle" style="margin-top: 36px; padding: 22px 26px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md);">
             <h3 style="color: var(--accent-cyan); font-size: 1.15rem; margin-bottom: 12px;">5.4 Microsoft Purview Data Governance — Implementation Context and Product Lifecycle (November 2026)</h3>
             <p style="font-size: 0.95rem; line-height: 1.8; color: var(--text-2);">
-              On <strong>12 November 2026</strong>, Microsoft officially announced the retirement of classic Microsoft Purview Data Governance capabilities, including Data Map, Unified Catalog, Workflows, and classic Azure Purview governance accounts:
+              On <strong>12 November 2026</strong>, Microsoft announced the retirement of classic Microsoft Purview Data Governance capabilities, with end of support scheduled for <strong>12 November 2027</strong>:
             </p>
             <ul style="font-size: 0.95rem; line-height: 1.8; color: var(--text-2); margin-left: 20px;">
-              <li><strong>Retirement Scope:</strong> New classic Microsoft Purview Data Governance accounts can no longer be created. Existing governance deployments remain in active maintenance mode through <strong>12 November 2027</strong>.</li>
-              <li><strong>Strategic Direction:</strong> Microsoft is directing future enterprise data cataloging, lineage, and metadata governance toward <strong>Microsoft Fabric</strong> and <strong>OneLake Catalog</strong>.</li>
-              <li><strong>Data Security Unaffected:</strong> This lifecycle transition applies strictly to classic Data Governance. <strong>Microsoft Purview Data Security and Compliance solutions</strong>—including Data Loss Prevention (DLP), Sensitivity Labels, Information Protection, and eDiscovery—are completely unaffected by this announcement.</li>
+              <li><strong>Retirement Scope &amp; Direction:</strong> Microsoft has announced the retirement of classic Purview Data Governance (including Data Map and Unified Catalog), directing future enterprise data cataloging, lineage, and metadata governance initiatives toward <strong>Microsoft Fabric</strong> and <strong>OneLake Catalog</strong>.</li>
+              <li><strong>End of Support:</strong> End of support for classic Data Governance capabilities is scheduled for <strong>12 November 2027</strong>.</li>
+              <li><strong>Data Security &amp; Compliance Unaffected:</strong> The announced retirement applies strictly to Data Governance. <strong>Microsoft Purview Data Security and Compliance solutions</strong>—including Data Loss Prevention (DLP), Sensitivity Labels, Information Protection, and eDiscovery—are outside the scope of this retirement announcement and remain Microsoft's active core compliance platforms.</li>
             </ul>
             <p style="font-size: 0.95rem; line-height: 1.8; color: var(--text-2); margin-top: 12px;">
-              <strong>Historical Lab Evidence:</strong> In this portfolio environment, the classic Microsoft Purview Data Map experience remains visible and fully functional within the tenant, allowing hands-on execution of storage registration, managed identity scanning, and automated schema classification as shown in Figures 13–15. For future production architectures, these governance workflows will be built on Microsoft Fabric and OneLake Catalog.
+              <strong>Hands-on Lab Evidence:</strong> In this portfolio environment, the classic Microsoft Purview Data Map experience remains accessible and operational within the author's tenant portal, allowing hands-on execution of storage registration, managed identity scanning, and automated schema classification as demonstrated in Figures 13–15. For future enterprise architectures, Microsoft Fabric and OneLake Catalog represent the recommended path.
             </p>
           </div>
         </section>
@@ -708,7 +708,7 @@
               <div class="figure-zoom-hint">🔍 Click to Expand</div>
             </div>
             <div class="figure-caption">
-              <strong>Figure 16: Cryptographic Sensitivity Label Priority 9</strong> — Establishing top-tier encryption and rights management for PII and financial records.
+              <strong>Figure 16: Sensitivity Label Hierarchy &amp; Document Protection (Priority 9)</strong> — Configuring label priority precedence and Rights Management document protection for PII and financial records.
             </div>
           </div>
 
@@ -810,7 +810,7 @@ Match Type: Regex pattern with semantic keyword corroboration</code></pre>
         <section id="phase-5">
           <h2>7. Phase 5: Generative AI &amp; Microsoft 365 Copilot Data Loss Prevention</h2>
           <p>
-            Generative AI tools introduce novel shadow-exfiltration risks. Under Section 6 of India's DPDP Act, personal data collected for business consulting cannot be ingested into large language models without explicit purpose consent. If employees paste client PAN numbers or patient medical notes into AI assistants for summarization, a serious data security failure occurs.
+            Generative AI tools introduce novel shadow-exfiltration risks. While Section 6 of India's DPDP Act establishes substantive consent requirements, technical controls are necessary at the application layer to prevent unauthorized or unintended ingestion of personal data into generative AI models. If employees paste client PAN numbers or patient medical notes into AI chat assistants for summarization, sensitive data is exposed. Deploying prompt-level DLP provides an automated technical safeguard, operating as a data-security guardrail rather than statutory proof of consent compliance.
           </p>
 
           <h3>7.1 Dedicated Microsoft 365 Copilot DLP Architecture</h3>
@@ -840,7 +840,7 @@ Match Type: Regex pattern with semantic keyword corroboration</code></pre>
               <div class="figure-zoom-hint">🔍 Click to Expand</div>
             </div>
             <div class="figure-caption">
-              <strong>Figure 24: LIVE PROOF — Copilot Prompt Interception</strong> — Real-time refusal of prompt injection containing sensitive PII under DPDP Act Section 6.
+              <strong>Figure 24: LIVE PROOF — Copilot Prompt Interception</strong> — Real-time prompt interception of sensitive identifiers in Microsoft 365 Copilot Chat as an automated technical data-security guardrail.
             </div>
           </div>
         </section>
@@ -894,7 +894,7 @@ Match Type: Regex pattern with semantic keyword corroboration</code></pre>
               <div class="figure-zoom-hint">🔍 Click to Expand</div>
             </div>
             <div class="figure-caption">
-              <strong>Figure 26: eDiscovery Premium DSAR Case</strong> — Provisioning case <code>DSAR-2026-001-Vendor-and-Employee-Access-Request</code> under DPDP Act Section 11.
+              <strong>Figure 26: eDiscovery Premium DSAR Case</strong> — Provisioning case <code>DSAR-2026-001-Vendor-and-Employee-Access-Request</code> as a future-state DPDP Act Section 11 readiness simulation.
             </div>
           </div>
 
@@ -918,7 +918,7 @@ Match Type: Regex pattern with semantic keyword corroboration</code></pre>
               Request → Identity Verification → Discovery → Legal/Retention Assessment → Approval → Execution (Correction/Erasure) → Audit Evidence
             </p>
             <p style="font-size: 0.92rem; color: var(--text-2); margin-top: 8px;">
-              Under Section 12(3), personal data erasure is subject to statutory retention exceptions where retention remains necessary for the specified purpose or for compliance with any law in force (e.g. tax laws requiring 8-year financial records retention).
+              Under Section 12(3), personal data erasure is subject to statutory retention exceptions where retention remains necessary for the specified purpose or for compliance with any law in force.
             </p>
           </div>
 
@@ -936,12 +936,12 @@ Match Type: Regex pattern with semantic keyword corroboration</code></pre>
             </div>
           </div>
 
-          <h3>8.5 Sandboxed Reviewer RBAC &amp; 4-File Audit Trail Export</h3>
+          <h3>8.5 Sandboxed Reviewer RBAC &amp; 4-File Process Evidence Export</h3>
           <p>
-            To preserve evidence integrity, I assigned Purview Role Group <code>Reviewer</code> (backed by <code>SG-NEX-Legal-Compliance</code>) strictly to this single case. Reviewers can inspect and tag records within case <code>DSAR-2026-001</code>, but are barred from global tenant export privileges.
+            To preserve evidence integrity, I assigned Purview Role Group <code>Reviewer</code> (backed by <code>SG-NEX-Legal-Compliance</code>) strictly to this single case. Assigning the Reviewer role group restricts analysts to reviewing and tagging within permitted cases; restricting export capabilities requires configuring specific eDiscovery export permissions and tenant role boundaries, which should be verified through independent permission testing.
           </p>
           <p>
-            Finally, I exported the official <strong>4-file Audit Report</strong> (<code>Summary.csv</code>, <code>Locations.csv</code>, <code>Settings.csv</code>, and <code>Statistics.csv</code>) backed by Microsoft 365 Unified Audit Logging—providing supporting audit and process evidence for regulatory review.
+            Finally, I exported the official <strong>4-file eDiscovery Process Report</strong> (<code>Summary.csv</code>, <code>Locations.csv</code>, <code>Settings.csv</code>, and <code>Statistics.csv</code>). These process reports document the specific search parameters, responsive item counts, and review-set export metadata; they operate alongside Microsoft 365 Unified Audit Logs, which separately record tenant-wide administrator actions and data access events.
           </p>
           <div class="figure-card" onclick="openLightbox(28)">
             <div class="figure-img-wrap">
@@ -949,7 +949,7 @@ Match Type: Regex pattern with semantic keyword corroboration</code></pre>
               <div class="figure-zoom-hint">🔍 Click to Expand</div>
             </div>
             <div class="figure-caption">
-              <strong>Figure 29: Case-Sandboxed Reviewer RBAC &amp; Chain-of-Custody</strong> — Group-based role delegation with immutable 4-file audit trail export.
+              <strong>Figure 29: Case-Sandboxed Reviewer RBAC &amp; Process Evidence</strong> — Group-based role delegation with 4-file eDiscovery audit and process report export.
             </div>
           </div>
         </section>
