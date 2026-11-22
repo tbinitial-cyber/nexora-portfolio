@@ -38,8 +38,8 @@ const SCREENSHOTS = [
   {
     id: 6,
     file: '06-azure-resource-group-central-india.png',
-    title: 'Figure 06: Data Sovereignty — Central India Resource Group',
-    caption: 'Enforced sovereign cloud hosting within Central India (rg-nexora-privacy-lab-dev-001) ensuring critical financial and patient datasets remain compliant with domestic data localization standards.'
+    title: 'Figure 06: Central India Regional Resource Placement',
+    caption: 'Regional resource placement within Central India (rg-nexora-privacy-lab-dev-001) for Purview, Storage, and SQL assets supporting domestic data architecture requirements.'
   },
   {
     id: 7,
