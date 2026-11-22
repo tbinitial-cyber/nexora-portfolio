@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Engineering Zero-Trust Data Governance &amp; DPDP Compliance in Azure &amp; Microsoft Purview | LawXTech</title>
-  <meta name="description" content="An architectural deep-dive by Tarun Bhatia on operationalizing India's DPDP Act 2023, ISO 27001, and PCI-DSS across Microsoft Entra ID PIM, Azure RBAC, Purview Data Map, Sensitivity Labels, Live Outlook DLP, Copilot AI Guardrails, and eDiscovery DSAR redaction.">
+  <title>Engineering Zero-Trust Data Governance: A Microsoft Azure &amp; Purview Implementation Blueprint for India's DPDP Act | LawXTech</title>
+  <meta name="description" content="An architectural deep-dive by Tarun Bhatia on translating selected statutory requirements under India's DPDP Act 2023, ISO/IEC 27001:2022, ISO/IEC 27701:2025, and PCI-DSS into technical controls and auditable implementation evidence across Microsoft Entra ID PIM, Azure RBAC, Purview Data Map, Sensitivity Labels, Live Outlook DLP, Copilot AI Guardrails, and eDiscovery DSAR redaction.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
   <nav id="navbar">
     <div class="container nav-inner">
       <a href="/" class="nav-brand">
-        <span class="brand-badge">âš–ï¸</span>
+        <span class="brand-badge">⚖️</span>
         <span class="brand-name">LawXTech</span>
         <span class="brand-domain">lawxtech.in</span>
       </a>
@@ -46,28 +46,28 @@
   <header class="article-header">
     <div class="container-narrow">
       <div class="article-meta-top">
-        <span class="post-pill pill-active">Case Study #01 Â· Architecture Blueprint</span>
-        <span style="font-size: 0.85rem; color: var(--text-3);">Â·</span>
-        <span class="post-read-time">ðŸ“– 18 min read</span>
-        <span style="font-size: 0.85rem; color: var(--text-3);">Â·</span>
+        <span class="post-pill pill-active">Case Study #01 · Architecture Blueprint</span>
+        <span style="font-size: 0.85rem; color: var(--text-3);">·</span>
+        <span class="post-read-time">📖 18 min read</span>
+        <span style="font-size: 0.85rem; color: var(--text-3);">·</span>
         <span style="font-size: 0.85rem; color: var(--accent-cyan); font-weight: 600;">30 Verified Evidences</span>
       </div>
       <h1 class="article-h1">
-        Engineering Zero-Trust Data Governance &amp; DPDP Compliance in Azure &amp; Microsoft Purview
+        Engineering Zero-Trust Data Governance: A Microsoft Azure &amp; Purview Implementation Blueprint for India's DPDP Act
       </h1>
       <p class="article-lead">
-        A consulting-grade architectural walkthrough demonstrating how to convert statutory legal obligations under India's Digital Personal Data Protection Act, 2023 (DPDP Act), ISO/IEC 27001, and PCI-DSS into automated, auditable cloud guardrails.
+        A consulting-grade architectural walkthrough demonstrating how to translate selected statutory requirements under India's Digital Personal Data Protection Act, 2023 (DPDP Act), ISO/IEC 27001:2022, ISO/IEC 27701:2025, and PCI-DSS into technical controls and auditable implementation evidence.
       </p>
       <div class="author-bar">
         <div class="author-info">
           <div class="author-avatar">TB</div>
           <div>
             <div class="author-name">Tarun Bhatia</div>
-            <div class="author-role">Privacy Engineer &amp; Data Governance Specialist Â· LawXTech</div>
+            <div class="author-role">Data Privacy &amp; Cloud Governance Analyst | Techno-Legal Practitioner · LawXTech</div>
           </div>
         </div>
         <div class="article-date-time">
-          Published: November 2026 Â· Delhi NCR, India
+          Published: November 2026 · Tohana &amp; Delhi NCR, India
         </div>
       </div>
     </div>
@@ -81,28 +81,36 @@
       <aside class="toc-sidebar">
         <div class="toc-title">Table of Contents</div>
         <nav class="toc-list">
-          <a href="#executive-overview" class="toc-link">1. Executive Overview &amp; Background</a>
-          <a href="#regulatory-framework" class="toc-link">2. Regulatory &amp; Threat Model</a>
-          <a href="#phase-1" class="toc-link">3. Phase 1: Identity &amp; PIM (01â€“05)</a>
-          <a href="#phase-2" class="toc-link">4. Phase 2: Azure RBAC &amp; KQL (06â€“10, 30)</a>
-          <a href="#kql-audit-section" class="toc-link sub">â†³ Verified KQL Audit Table</a>
-          <a href="#phase-3" class="toc-link">5. Phase 3: Data Discovery (11â€“15)</a>
-          <a href="#phase-4" class="toc-link">6. Phase 4: Labels &amp; Live DLP (16â€“22)</a>
-          <a href="#phase-5" class="toc-link">7. Phase 5: Copilot AI Governance (23â€“24)</a>
-          <a href="#phase-6" class="toc-link">8. Phase 6: Statutory DSAR (25â€“29)</a>
+          <a href="#executive-overview" class="toc-link">1. Executive Overview &amp; Lab Scope</a>
+          <a href="#regulatory-framework" class="toc-link">2. Regulatory Framework &amp; Commencement</a>
+          <a href="#regulatory-commencement" class="toc-link sub">↳ 2.1 Phased Commencement Status</a>
+          <a href="#statutory-mapping" class="toc-link sub">↳ 2.2 Statutory Section Mapping</a>
+          <a href="#iso-pci-framework" class="toc-link sub">↳ 2.3 ISO 27001/27701 &amp; PCI-DSS</a>
+          <a href="#phase-1" class="toc-link">3. Phase 1: Identity &amp; PIM (01–05)</a>
+          <a href="#phase-2" class="toc-link">4. Phase 2: Azure RBAC &amp; KQL (06–10, 30)</a>
+          <a href="#kql-audit-section" class="toc-link sub">↳ 4.3 Verified KQL Audit Table</a>
+          <a href="#phase-3" class="toc-link">5. Phase 3: Data Discovery (11–15)</a>
+          <a href="#purview-lifecycle" class="toc-link sub">↳ 5.4 Purview Lifecycle Notice (Nov 2026)</a>
+          <a href="#phase-4" class="toc-link">6. Phase 4: Labels &amp; Live DLP (16–22)</a>
+          <a href="#phase-5" class="toc-link">7. Phase 5: Copilot AI Governance (23–24)</a>
+          <a href="#phase-6" class="toc-link">8. Phase 6: Statutory DSAR (25–29)</a>
+          <a href="#dsar-scenario-clarification" class="toc-link sub">↳ 8.2 Sole-Proprietor Scenario</a>
+          <a href="#section-12-lifecycle" class="toc-link sub">↳ 8.3 Section 12 Lifecycle</a>
           <a href="#engineering-lessons" class="toc-link">9. Engineering Lessons &amp; Troubleshooting</a>
-          <a href="#conclusion" class="toc-link">10. Conclusion &amp; Architecture Summary</a>
+          <a href="#governance-context" class="toc-link">10. Additional Governance Context</a>
+          <a href="#limitations-readiness" class="toc-link">11. Limitations &amp; Production Readiness</a>
+          <a href="#conclusion" class="toc-link">12. Conclusion &amp; Architecture Summary</a>
         </nav>
       </aside>
 
       <!-- Main Long-Form Editorial Content -->
       <article class="article-content">
 
-        <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+        <!-- ═══════════════════════════════════════════
              1. EXECUTIVE OVERVIEW
-        â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+        ═══════════════════════════════════════════ -->
         <section id="executive-overview">
-          <h2>1. Executive Overview: Translating Law into Automated Code</h2>
+          <h2>1. Executive Overview: Translating Law into Technical Controls</h2>
           <p>
             In modern cloud computing, the traditional divide between legal compliance and systems engineering represents an existential operational risk. Legal departments author static policy manuals, Data Protection Impact Assessments (DPIAs), and acceptable use memos. Meanwhile, engineering teams deploy microservices, provision cloud storage accounts, and integrate Generative AI assistants in rapid CI/CD cycles.
           </p>
@@ -110,150 +118,278 @@
             When a software engineer accidentally configures an Azure Blob container with anonymous read access, or an analyst pastes confidential vendor bank details into an ungrounded AI chat interface, static policies offer zero resistance. The breach occurs at the packet level; compliance must therefore be enforced at the cloud control plane.
           </p>
           <div class="callout callout-legal">
-            <strong>The Core Engineering Thesis:</strong> Under modern privacy legislation like India's Digital Personal Data Protection Act, 2023 (DPDP Act), a policy that is not enforced by cloud infrastructure is merely a document of liability. The objective of this project was to construct an end-to-end, Zero-Trust compliance architecture where statutory mandates operate as automated, auditable cloud guardrails.
+            <strong>The Core Engineering Thesis:</strong> Under modern privacy legislation like India's Digital Personal Data Protection Act, 2023 (DPDP Act), a policy that is not enforced by cloud infrastructure is merely an aspirational document of liability. The objective of this project was to construct an end-to-end, Zero-Trust compliance architecture where selected statutory mandates operate as demonstrated technical controls and auditable implementation evidence.
           </div>
           <p>
-            To validate this architecture in a production-identical setting, I established <strong>Nexora Consulting</strong>â€”a simulated Indian B2B FinTech and Healthcare Advisory enterprise headquartered across dual technology hubs in <strong>Gurugram and Bengaluru</strong>. 
+            To validate this architecture in a structured hands-on setting, I established <strong>Nexora Consulting</strong>—a simulated Indian B2B FinTech and Healthcare Advisory enterprise modelled across dual technology hubs in <strong>Gurugram and Bengaluru</strong>.
           </p>
           <p>
-            Nexora Consulting operates across five specialized functional units: <em>Finance &amp; Treasury</em>, <em>Human Resources</em>, <em>Legal &amp; Compliance</em>, <em>IT Security Operations</em>, and <em>Healthcare Advisory Services</em>. On any given business day, Nexora's cloud infrastructure processes two high-risk categories of sensitive data:
+            Nexora Consulting operates across five specialized functional units: <em>Finance &amp; Treasury</em>, <em>Human Resources</em>, <em>Legal &amp; Compliance</em>, <em>IT Security Operations</em>, and <em>Healthcare Advisory Services</em>. Within this simulated lab environment, the cloud architecture processes two high-risk categories of synthetic test data:
           </p>
           <ul>
-            <li><strong>Indian Employee &amp; Corporate Vendor Financial Records:</strong> Permanent Account Numbers (PAN), corporate bank account numbers, tax identification sheets, and invoice reconciliation registers stored across private Azure Data Lake storage.</li>
-            <li><strong>Healthcare Client &amp; Patient Identifiers:</strong> Structured patient support coordination plans and unique clinical identification records governed by domestic healthcare privacy protocols and client confidentiality agreements.</li>
+            <li><strong>Synthetic Indian Employee &amp; Corporate Vendor Financial Records:</strong> Synthetically generated Permanent Account Numbers (PAN), corporate bank account numbers, tax identification sheets, and invoice reconciliation registers staged across private Azure Data Lake storage.</li>
+            <li><strong>Synthetic Healthcare Client &amp; Patient Identifiers:</strong> Structured patient support coordination plans and synthetic clinical identification records modelled against domestic healthcare privacy considerations and client confidentiality agreements.</li>
           </ul>
+          <p style="font-size: 0.95rem; color: var(--text-2); background: rgba(56, 189, 248, 0.05); padding: 14px 18px; border-left: 3px solid var(--accent-cyan); border-radius: var(--radius-sm);">
+            ℹ️ <strong>Test Environment Disclosure:</strong> Nexora Consulting is a hands-on enterprise privacy and data governance simulation lab. All corporate records, employee identities, vendor accounts, PAN numbers, banking details, card numbers, and patient IDs referenced in this case study are synthetic test datasets engineered exclusively for technical validation.
+          </p>
         </section>
 
-        <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-             2. REGULATORY & THREAT MODEL
-        â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+        <!-- ═══════════════════════════════════════════
+             2. REGULATORY FRAMEWORK & COMMENCEMENT
+        ═══════════════════════════════════════════ -->
         <section id="regulatory-framework">
-          <h2>2. Regulatory Framework &amp; Threat Model</h2>
+          <h2>2. Regulatory Framework, Commencement &amp; Threat Model</h2>
           <p>
-            Designing enterprise cloud controls requires grounding every configuration in specific statutory requirements. For Nexora Consulting, three intersecting frameworks established our technical design criteria:
+            Engineering defensible cloud controls requires grounding every configuration in authoritative statutory provisions rather than high-level legal summaries. The technical architecture of Nexora Consulting maps directly against three intersecting regulatory and security frameworks:
           </p>
-          <p>
-            <strong>1. Digital Personal Data Protection Act, 2023 (India DPDP Act):</strong>
-          </p>
-          <ul>
-            <li><strong>Section 6 (Purpose Limitation):</strong> Mandates that personal data must only be processed for the specific lawful purpose consented to by the Data Principal. PII must be shielded from shadow AI ingestion and unapproved processing.</li>
-            <li><strong>Section 8(5) (Technical Safeguards):</strong> Imposes an affirmative legal duty on the Data Fiduciary to implement reasonable security safeguards to prevent personal data breaches under threat of statutory penalties up to â‚¹250 Crores.</li>
-            <li><strong>Section 11 (Right of Access &amp; DSAR):</strong> Grants individuals the statutory right to obtain a summary of their personal data and identities of third parties with whom it was shared, requiring targeted search and strict third-party PII redaction.</li>
-          </ul>
-          <p>
-            <strong>2. Payment Card Industry Data Security Standard (PCI-DSS):</strong> Requirements 3 and 7 mandate that stored payment card information (primary account numbers, transaction hashes) must be cryptographically protected and strictly isolated to authorized personnel.
-          </p>
-          <p>
-            <strong>3. ISO/IEC 27001:2022 &amp; ISO 27701:</strong> Controls A.9 (Access Control), A.9.2.3 (Management of Privileged Access), and A.12.4 (Logging and Monitoring) require Zero Standing Privileges, segregation of duties, and tamper-resistant audit trails.
-          </p>
+
+          <!-- 2.1 Commencement Subsection -->
+          <div id="regulatory-commencement">
+            <h3>2.1 Regulatory Commencement &amp; Implementation Status (as of November 2026)</h3>
+            <p>
+              A rigorous techno-legal case study must clearly distinguish between provisions currently in force and forthcoming statutory obligations. India's Digital Personal Data Protection Act, 2023 follows a phased statutory commencement framework established by the Ministry of Electronics and Information Technology (MeitY) through official Gazette notifications:
+            </p>
+
+            <div style="margin: 20px 0; padding: 18px 22px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md);">
+              <h4 style="color: var(--accent-cyan); font-size: 1.05rem; margin-bottom: 12px;">MeitY Notification G.S.R. 843(E) — DPDP Act Phased Commencement Timeline</h4>
+              <ul style="font-size: 0.95rem; line-height: 1.8; color: var(--text-2); margin-left: 18px;">
+                <li><strong>13 November 2025 (Immediate Commencement):</strong> Institutional provisions bringing into force Section 1(2), Section 2 (Definitions), Sections 18–26 (Establishment, composition, terms, and proceedings of the Data Protection Board of India), Section 35 (Power to call for information), Sections 38–43 (Penalties adjudication, recovery, and appeals to TDSAT), and Sections 44(1) &amp; 44(3).</li>
+                <li><strong>13 November 2026 (One-Year Commencement):</strong> Section 6(9) (Data Fiduciary obligations regarding registered Consent Managers) and Section 27(1)(d) (Power of the Board to issue interim directions).</li>
+                <li><strong>13 May 2027 (Eighteen-Month Commencement):</strong> Substantive operational mandates taking effect, including Sections 3–5 (Application, Grounds for processing, Notice), Sections 6(1)–6(8) &amp; 6(10) (Substantive Consent requirements and withdrawal), Sections 7–17 (Certain legitimate uses, general obligations of Data Fiduciaries, Significant Data Fiduciary duties, Data Principal rights of access, correction, erasure, grievance redressal, and nomination), Section 27 (general Board powers except (1)(d)), Sections 28–34, Sections 36–37, and Section 44(2).</li>
+              </ul>
+            </div>
+
+            <div style="margin: 20px 0; padding: 18px 22px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md);">
+              <h4 style="color: var(--accent-green); font-size: 1.05rem; margin-bottom: 12px;">MeitY Notification G.S.R. 846(E) — DPDP Rules, 2025 Phased Implementation</h4>
+              <ul style="font-size: 0.95rem; line-height: 1.8; color: var(--text-2); margin-left: 18px;">
+                <li><strong>13 November 2025:</strong> Rules 1–2 (Title and definitions) and Rules 17–21 (Board operational guidelines, salary, and terms).</li>
+                <li><strong>13 November 2026:</strong> Rule 4 (Registration, technical architecture, and obligations of Consent Managers).</li>
+                <li><strong>13 May 2027:</strong> Rule 3 (Notice requirements), Rules 5–16 (Consent procedure, reasonable security safeguards under Rule 6, personal data breach intimation under Rule 7, data erasure notices under Rule 8, Significant Data Fiduciary obligations under Rules 9–13, Data Principal rights procedure under Rule 14, grievance redressal under Rule 15), and Rules 22–23.</li>
+              </ul>
+            </div>
+
+            <p>
+              <strong>Forward-Looking Readiness Positioning:</strong> Because the substantive operational mandates—including Section 8(5) technical safeguards, Rule 6 security standards, Section 11 access rights, and Section 12 erasure workflows—are scheduled to commence on <strong>13 May 2027</strong>, Nexora Consulting is positioned as a <em>forward-looking enterprise readiness lab</em>. The implementation demonstrates how an enterprise cloud environment can be engineered and verified today to satisfy statutory obligations well before their formal legal commencement.
+            </p>
+          </div>
+
+          <!-- 2.2 Statutory Section Mapping -->
+          <div id="statutory-mapping" style="margin-top: 32px;">
+            <h3>2.2 Authoritative Statutory Section Mapping</h3>
+            <p>
+              To ensure interview defensibility, statutory terms are strictly mapped to their actual legislative text under the DPDP Act 2023:
+            </p>
+
+            <div class="compliance-matrix-wrap" style="margin: 24px 0;">
+              <table class="compliance-table">
+                <thead>
+                  <tr>
+                    <th>Statutory Provision</th>
+                    <th>Legislative Subject</th>
+                    <th>Core Statutory Standard &amp; Scope</th>
+                    <th>Nexora Technical Control Counterpart</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Section 4</strong></td>
+                    <td>Grounds for Processing</td>
+                    <td>Personal data may be processed only for a lawful purpose for which the Data Principal gave consent, or for certain legitimate uses.</td>
+                    <td>Entra ID directory role boundaries and container-scoped access policies.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Section 5</strong></td>
+                    <td>Notice Requirements</td>
+                    <td>Data Fiduciary must give itemised notice before or at the time of requesting consent, specifying data categories, purpose, rights, and grievance officer.</td>
+                    <td>Simulated consent notices informing users prior to cloud onboarding.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Section 6</strong></td>
+                    <td>Consent Framework</td>
+                    <td>Consent must be free, specific, informed, unconditional, and unambiguous with clear affirmative action, limited to necessary personal data. Withdrawal must be as easy as giving consent.</td>
+                    <td>Microsoft 365 Copilot DLP prompt inspection preventing unconsented prompt ingestion into Generative AI models.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Section 7</strong></td>
+                    <td>Certain Legitimate Uses</td>
+                    <td>Specified statutory grounds for processing without explicit Section 6 consent (e.g. voluntary data provision under Sec 7(a), employment, legal duties).</td>
+                    <td>Vendor onboarding and settlement records voluntarily provided by sole proprietors for commercial fulfillment.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Section 8(2)</strong></td>
+                    <td>Processor Engagement</td>
+                    <td>A Data Fiduciary may engage, appoint, use or involve a Data Processor only under a valid contract.</td>
+                    <td>Cloud Service Provider (CSP) enterprise agreements and sub-processor governance framework.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Section 8(5) &amp; Rule 6</strong></td>
+                    <td>Reasonable Security Safeguards</td>
+                    <td>Affirmative legal duty to protect personal data by implementing reasonable security safeguards to prevent personal data breaches. Schedule specifies penalty up to ₹250 Cr statutory max.</td>
+                    <td>Entra PIM JIT elevation, 12 security groups, two-tier storage IAM, and live Exchange DLP exfiltration blocking.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Section 8(6) &amp; Rule 7</strong></td>
+                    <td>Breach Intimation</td>
+                    <td>Duty to intimate the Data Protection Board and affected Data Principals in the event of a personal data breach (initial notice without delay; detailed report within 72 hours).</td>
+                    <td>Audit-triggered incident response pipeline backed by Microsoft 365 Unified Audit Logs.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Section 8(7) &amp; Rule 8</strong></td>
+                    <td>Data Erasure</td>
+                    <td>Duty to erase personal data upon withdrawal of consent or when purpose is no longer served, unless retention is required under applicable law.</td>
+                    <td>Purview data retention policies and Section 12 lifecycle evaluation.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Section 10</strong></td>
+                    <td>Significant Data Fiduciary (SDF)</td>
+                    <td>Additional obligations (DPO based in India, independent data auditor, periodic DPIAs) apply only when an entity is notified by the Central Government.</td>
+                    <td>Simulated Privacy Lead / DPO-style role (Aadi Dugar) demonstrating governance practices without claiming formal SDF notification.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Section 11 &amp; Section 12</strong></td>
+                    <td>Data Principal Rights</td>
+                    <td>Right to obtain summary of personal data, processing activities, identities of third parties shared with (Sec 11), and correction, completion, updating, and erasure (Sec 12).</td>
+                    <td>Purview eDiscovery Premium targeted query, third-party PII redaction evaluation, and 4-file audit export.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Section 16</strong></td>
+                    <td>International Transfers</td>
+                    <td>Restricted-transfer framework empowering the Central Government to restrict transfers to notified countries or territories.</td>
+                    <td>Regional Azure resource placement in Central India with operational evaluation of metadata and subprocessor routes.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p>
+              <strong>Distinction: Personal Data vs. Internal Business Tiers:</strong> The DPDP Act, 2023 regulates <em>Personal Data</em> generally (defined in Section 2(t) as any data about an individual who is identifiable by or in relation to such data) and does not establish a statutory "sensitive personal data" tier analogous to GDPR Article 9. Nexora's classification label <code>Confidential - PII and Financial</code> represents an <em>internal business risk classification</em> designed to apply defense-in-depth controls to high-impact financial and identity fields, rather than a statutory label mandated by the Act.
+            </p>
+          </div>
+
+          <!-- 2.3 ISO & PCI Standards -->
+          <div id="iso-pci-framework" style="margin-top: 32px;">
+            <h3>2.3 International Standards: ISO/IEC 27001:2022, ISO/IEC 27701:2025 &amp; PCI-DSS v4.0</h3>
+            <p>
+              In enterprise consulting, domestic statutory mandates must integrate with globally recognized security and privacy standards:
+            </p>
+            <ul>
+              <li><strong>ISO/IEC 27001:2022 (Information Security Management):</strong> The implementation maps to current 2022 Annex A controls: <em>Control 5.3</em> (Segregation of duties), <em>Control 5.15</em> (Access control), <em>Control 5.18</em> (Access rights), <em>Control 8.2</em> (Privileged access rights), <em>Control 8.15</em> (Logging), and <em>Control 8.16</em> (Monitoring activities). <em>Note: Nexora demonstrates implementation of selected controls and does not claim formal ISO certification or conformity.</em></li>
+              <li><strong>ISO/IEC 27701:2025 (Privacy Information Management System - PIMS):</strong> Second edition published in October 2025, providing guidance on privacy governance, controller and processor responsibilities, records of processing activities (ROPA), privacy risk assessments, Data Principal rights fulfillment, and security incident response. Nexora adopts these structured practices across its simulated workflows.</li>
+              <li><strong>PCI-DSS v4.0 (Payment Card Industry Data Security Standard):</strong> <em>Requirement 3</em> (Protect stored account data) and <em>Requirement 7</em> (Restrict access to system components and cardholder data by business need-to-know). Nexora uses synthetic Primary Account Number (PAN) test records in isolated storage to validate classification and label protection; the lab does not process live cardholder data or constitute a validated PCI-DSS assessment.</li>
+            </ul>
+          </div>
         </section>
 
-        <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+        <!-- ═══════════════════════════════════════════
              PHASE 1: IDENTITY & PIM
-        â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+        ═══════════════════════════════════════════ -->
         <section id="phase-1">
-          <h2>3. Phase 1: Identity Governance &amp; Zero Standing Privileges</h2>
+          <h2>3. Phase 1: Identity Governance &amp; Just-In-Time Privilege Elevation</h2>
           <p>
-            Identity is the primary security perimeter of any Zero-Trust cloud deployment. Under DPDP Act Section 8(5) and ISO 27001 A.9, granting permanent administrative privileges to individual user accounts introduces severe insider-threat exposure. If an administrator's credentials are compromised, an attacker inherits standing access to all underlying repositories.
+            Identity serves as the primary security boundary of modern cloud computing. Under DPDP Act Section 8(5) and ISO/IEC 27001:2022 Control 8.2, maintaining standing administrative privileges for human operators introduces severe insider-threat exposure. If an administrator's account is compromised, an adversary inherits permanent access across all cloud repositories.
           </p>
 
           <h3>3.1 Workforce Directory Provisioning (26 Cloud Identities)</h3>
           <p>
-            I began by provisioning 26 directory identities in Microsoft Entra ID. Each identity was assigned to a defined functional role within Nexora Consulting, completely segregating standard business analysts from dedicated privacy leadership and emergency recovery accounts.
+            I provisioned 26 directory identities in Microsoft Entra ID, segregated across Nexora's operational units. Standard business analysts were completely isolated from privacy governance leadership and emergency recovery accounts.
           </p>
           <div class="figure-card" onclick="openLightbox(0)">
             <div class="figure-img-wrap">
               <img src="../assets/screenshots/01-entra-employee-directory.png" alt="Entra Employee Directory" loading="lazy">
-              <div class="figure-zoom-hint">ðŸ” Click to Expand</div>
+              <div class="figure-zoom-hint">🔍 Click to Expand</div>
             </div>
             <div class="figure-caption">
-              <strong>Figure 01: Workforce Directory Provisioning (26 Users)</strong> â€” Segregating regular business users from compliance leadership (DPO Aadi Dugar) and break-glass administrative accounts.
+              <strong>Figure 01: Workforce Directory Provisioning (26 Users)</strong> — Segregating regular business users from compliance leadership (DPO Aadi Dugar) and break-glass administrative accounts.
             </div>
           </div>
 
           <h3>3.2 Departmental Security Group Architecture (12 Groups)</h3>
           <p>
-            To prevent permission sprawl, individual user access assignments were strictly banned. I established 12 role-segmented Entra Security Groups (including <code>SG-NEX-All-Employees</code>, <code>SG-NEX-Finance</code>, <code>SG-NEX-HR</code>, <code>SG-NEX-IT-Security</code>, and <code>SG-NEX-Legal-Compliance</code>). All downstream cloud governance policiesâ€”from Azure Storage IAM to Purview sensitivity labelsâ€”target these groups exclusively.
+            To prevent permission creep, direct user assignments were strictly prohibited. I created 12 role-segmented Entra Security Groups (such as <code>SG-NEX-All-Employees</code>, <code>SG-NEX-Finance</code>, <code>SG-NEX-HR</code>, <code>SG-NEX-IT-Security</code>, and <code>SG-NEX-Legal-Compliance</code>). All downstream access policies—from Azure Storage IAM to Purview sensitivity labels—target these groups exclusively, satisfying ISO 27001 Control 5.3 (Segregation of duties).
           </p>
           <div class="figure-card" onclick="openLightbox(1)">
             <div class="figure-img-wrap">
               <img src="../assets/screenshots/02-entra-security-groups-part1.png" alt="Security Groups Part 1" loading="lazy">
-              <div class="figure-zoom-hint">ðŸ” Click to Expand</div>
+              <div class="figure-zoom-hint">🔍 Click to Expand</div>
             </div>
             <div class="figure-caption">
-              <strong>Figure 02: Departmental Security Group Segmentation (Part 1)</strong> â€” Standardizing group-based access control across Finance, HR, and IT Security.
+              <strong>Figure 02: Departmental Security Group Segmentation (Part 1)</strong> — Standardizing group-based access control across Finance, HR, and IT Security.
             </div>
           </div>
 
           <div class="figure-card" onclick="openLightbox(2)">
             <div class="figure-img-wrap">
               <img src="../assets/screenshots/03-entra-security-groups-part2.png" alt="Security Groups Part 2" loading="lazy">
-              <div class="figure-zoom-hint">ðŸ” Click to Expand</div>
+              <div class="figure-zoom-hint">🔍 Click to Expand</div>
             </div>
             <div class="figure-caption">
-              <strong>Figure 03: Departmental Security Group Segmentation (Part 2)</strong> â€” Segmenting Legal-Compliance, Privacy-Operations, and executive review teams.
+              <strong>Figure 03: Departmental Security Group Segmentation (Part 2)</strong> — Segmenting Legal-Compliance, Privacy-Operations, and executive review teams.
             </div>
           </div>
 
           <h3>3.3 Just-In-Time Privilege Elevation (Entra PIM)</h3>
           <p>
-            For Nexora's designated Data Protection Officer (DPO), standing administrative rights were completely revoked. Utilizing <strong>Microsoft Entra Privileged Identity Management (PIM)</strong>, the DPO was provisioned with <em>Eligible</em> assignments for <code>Azure Information Protection Administrator</code> and <code>Compliance Administrator</code>. Under normal conditions, the DPO operates with zero administrative power. When compliance intervention is required, the DPO must activate the role via mandatory Multi-Factor Authentication (MFA), provide a documented business justification, and operate within a bounded time window.
+            For Nexora's designated Privacy Lead / simulated DPO (<code>Aadi Dugar</code>), standing administrative rights were revoked. Utilizing <strong>Microsoft Entra Privileged Identity Management (PIM)</strong>, the compliance lead was configured with <em>Eligible</em> assignments for <code>Information Protection Administrator</code> and <code>Compliance Administrator</code>. Under routine conditions, the user operates with standard business permissions. When compliance policy intervention is required, the operator must activate the role via mandatory Multi-Factor Authentication (MFA), provide a documented business justification, and operate within a bounded time window.
           </p>
           <div class="figure-card" onclick="openLightbox(3)">
             <div class="figure-img-wrap">
               <img src="../assets/screenshots/04-pim-dpo-eligible-roles.png" alt="PIM DPO Eligible Roles" loading="lazy">
-              <div class="figure-zoom-hint">ðŸ” Click to Expand</div>
+              <div class="figure-zoom-hint">🔍 Click to Expand</div>
             </div>
             <div class="figure-caption">
-              <strong>Figure 04: JIT Privilege Elevation via Entra PIM</strong> â€” Enforcing zero standing privileges for the Data Protection Officer with justification-based role activation.
+              <strong>Figure 04: JIT Privilege Elevation via Entra PIM</strong> — Enforcing zero standing privileges for routine compliance administration with justification-based role activation.
             </div>
           </div>
 
           <h3>3.4 Out-of-Band Break-Glass Administrative Isolation</h3>
           <p>
-            Emergency recovery capabilities are vital for operational resilience. To comply with ISO 27001 emergency access provisions without violating Zero-Trust principles, a dedicated emergency recovery account was provisioned with <code>Global Administrator</code>. This account is isolated from daily operations, enrolled in hardware security key authentication, and monitored with automated alerting on any authentication event.
+            Emergency recovery capabilities are essential for enterprise operational resilience. Rather than maintaining standing privileges on daily accounts, a dedicated break-glass account (<code>Emergency-Admin-01</code>) retains standing <code>Global Administrator</code> credentials. This account is strictly excluded from daily workflows, enrolled in FIDO2 hardware key authentication, and configured with automated audit alerts on any sign-in activity.
           </p>
           <div class="figure-card" onclick="openLightbox(4)">
             <div class="figure-img-wrap">
               <img src="../assets/screenshots/05-pim-breakglass-admin.png" alt="Break-Glass Admin" loading="lazy">
-              <div class="figure-zoom-hint">ðŸ” Click to Expand</div>
+              <div class="figure-zoom-hint">🔍 Click to Expand</div>
             </div>
             <div class="figure-caption">
-              <strong>Figure 05: Isolated Break-Glass Recovery Account</strong> â€” Eliminating standing global administrative credentials from routine compliance administration.
+              <strong>Figure 05: Isolated Break-Glass Recovery Account</strong> — Isolating emergency credentials from daily compliance administration to satisfy ISO 27001:2022 Control 8.2.
             </div>
           </div>
         </section>
 
-        <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+        <!-- ═══════════════════════════════════════════
              PHASE 2: AZURE RBAC & KQL
-        â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+        ═══════════════════════════════════════════ -->
         <section id="phase-2">
-          <h2>4. Phase 2: Cloud Data Residency, Hierarchical Azure RBAC &amp; KQL Audit</h2>
+          <h2>4. Phase 2: Regional Resource Placement, Two-Tier Storage IAM &amp; KQL Audit</h2>
           <p>
-            Under modern data protection frameworks, data sovereignty and least-privilege infrastructure access are paramount. If an infrastructure engineer possesses storage-level read permissions, they could bypass departmental encryption and access raw salary registers or healthcare plans directly from cloud disk storage.
+            Under modern data protection frameworks, data sovereignty preferences and least-privilege infrastructure access are paramount. If an infrastructure engineer possesses storage-level read permissions, they could bypass departmental encryption and access raw salary registers or healthcare plans directly from cloud disk storage.
           </p>
 
-          <h3>4.1 Central India Data Sovereignty &amp; Unified Resource Group</h3>
+          <h3>4.1 Central India Regional Resource Placement</h3>
           <p>
-            All cloud assets for Nexora Consulting were provisioned strictly within the <strong>Central India</strong> cloud region inside resource group <code>rg-nexora-privacy-lab-dev-001</code>. This centralized deployment satisfies domestic data residency preferences and guarantees that metadata and storage blobs remain within Indian jurisdictional boundaries.
+            All cloud resources for Nexora Consulting were provisioned within the <strong>Central India</strong> Azure region inside resource group <code>rg-nexora-privacy-lab-dev-001</code>.
+          </p>
+          <p style="font-size: 0.95rem; color: var(--text-2); background: rgba(56, 189, 248, 0.05); padding: 12px 16px; border-left: 3px solid var(--accent-cyan); border-radius: var(--radius-sm); margin: 14px 0;">
+            ⚠️ <strong>Data Sovereignty Qualification:</strong> Provisioning storage accounts in Central India satisfies regional resource placement. However, comprehensive data sovereignty under Section 16 of the DPDP Act and Indian sectoral guidelines requires evaluating service-specific processing locations, diagnostic/audit log retention, sub-processor locations, and CSP operational access commitments.
           </p>
           <div class="figure-card" onclick="openLightbox(5)">
             <div class="figure-img-wrap">
               <img src="../assets/screenshots/06-azure-resource-group-central-india.png" alt="Azure Resource Group Central India" loading="lazy">
-              <div class="figure-zoom-hint">ðŸ” Click to Expand</div>
+              <div class="figure-zoom-hint">🔍 Click to Expand</div>
             </div>
             <div class="figure-caption">
-              <strong>Figure 06: Sovereign Central India Resource Group</strong> â€” Hosting all Purview, Storage, and SQL assets within <code>rg-nexora-privacy-lab-dev-001</code>.
+              <strong>Figure 06: Sovereign Central India Resource Group</strong> — Hosting all Purview, Storage, and SQL assets within <code>rg-nexora-privacy-lab-dev-001</code>.
             </div>
           </div>
 
           <div class="figure-card" onclick="openLightbox(6)">
             <div class="figure-img-wrap">
               <img src="../assets/screenshots/07-azure-all-cloud-resources.png" alt="All Cloud Resources" loading="lazy">
-              <div class="figure-zoom-hint">ðŸ” Click to Expand</div>
+              <div class="figure-zoom-hint">🔍 Click to Expand</div>
             </div>
             <div class="figure-caption">
-              <strong>Figure 07: Unified Cloud Resource Overview</strong> â€” Segregated storage accounts (<code>stnexorafinance001</code>, <code>stnexorahrdev001</code>) and Purview account (<code>purview-nexora-gov-001</code>).
+              <strong>Figure 07: Unified Cloud Resource Overview</strong> — Segregated storage accounts (<code>stnexorafinance001</code>, <code>stnexorahrdev001</code>) and Purview account (<code>purview-nexora-gov-001</code>).
             </div>
           </div>
 
@@ -262,37 +398,37 @@
             To prevent storage administrators from viewing confidential files, I implemented a strict <strong>two-tier hierarchical RBAC architecture</strong>:
           </p>
           <ul>
-            <li><strong>Storage Account Level (Management Plane):</strong> Operational groups hold only <code>Reader</code> permissions. This permits viewing storage metrics and diagnostic logs without granting permissions to download or read storage blobs.</li>
-            <li><strong>Container Level (Data Plane):</strong> Granular permissions are assigned at the container boundary. On container <code>finance-documents</code>, <code>SG-NEX-Finance</code> holds <code>Storage Blob Data Contributor</code> for business uploads. <code>SG-NEX-Privacy-Operations</code> and Purview's System-Assigned Managed Identity are restricted to <code>Storage Blob Data Reader</code>. Crucially, <code>SG-NEX-HR</code> has zero assignments on the Finance container, completely eliminating lateral data traversal.</li>
+            <li><strong>Storage Account Level (Management Plane):</strong> Operational groups hold only <code>Reader</code> permissions. This permits viewing storage metrics and diagnostic logs without granting data-plane permissions to download or read storage blobs.</li>
+            <li><strong>Container Level (Data Plane):</strong> Granular permissions are assigned at the container boundary. On container <code>finance-documents</code>, <code>SG-NEX-Finance</code> holds <code>Storage Blob Data Contributor</code> for business uploads. <code>SG-NEX-Privacy-Operations</code> and Purview's System-Assigned Managed Identity are restricted to <code>Storage Blob Data Reader</code>. Crucially, <code>SG-NEX-HR</code> has zero assignments on the Finance container, segregating departmental access.</li>
           </ul>
 
           <div class="figure-card" onclick="openLightbox(7)">
             <div class="figure-img-wrap">
               <img src="../assets/screenshots/08-purview-account-rbac.png" alt="Purview Account RBAC" loading="lazy">
-              <div class="figure-zoom-hint">ðŸ” Click to Expand</div>
+              <div class="figure-zoom-hint">🔍 Click to Expand</div>
             </div>
             <div class="figure-caption">
-              <strong>Figure 08: Purview Governance Plane RBAC</strong> â€” Locking administrative access to <code>purview-nexora-gov-001</code> to prevent unauthorized policy tampering.
+              <strong>Figure 08: Purview Governance Plane RBAC</strong> — Locking administrative access to <code>purview-nexora-gov-001</code> to prevent unauthorized policy tampering.
             </div>
           </div>
 
           <div class="figure-card" onclick="openLightbox(8)">
             <div class="figure-img-wrap">
               <img src="../assets/screenshots/09-storage-account-rbac.png" alt="Storage Account RBAC" loading="lazy">
-              <div class="figure-zoom-hint">ðŸ” Click to Expand</div>
+              <div class="figure-zoom-hint">🔍 Click to Expand</div>
             </div>
             <div class="figure-caption">
-              <strong>Figure 09: Storage Account Management-Plane RBAC</strong> â€” Enforcing metadata-only read visibility across <code>stnexorafinance001</code>.
+              <strong>Figure 09: Storage Account Management-Plane RBAC</strong> — Enforcing metadata-only read visibility across <code>stnexorafinance001</code>.
             </div>
           </div>
 
           <div class="figure-card" onclick="openLightbox(9)">
             <div class="figure-img-wrap">
               <img src="../assets/screenshots/10-container-scoped-rbac.png" alt="Container Scoped RBAC" loading="lazy">
-              <div class="figure-zoom-hint">ðŸ” Click to Expand</div>
+              <div class="figure-zoom-hint">🔍 Click to Expand</div>
             </div>
             <div class="figure-caption">
-              <strong>Figure 10: Container-Scoped Least-Privilege IAM</strong> â€” Segregating Contributor vs. Reader privileges on <code>finance-documents</code>.
+              <strong>Figure 10: Container-Scoped Least-Privilege IAM</strong> — Segregating Contributor vs. Reader privileges on <code>finance-documents</code>.
             </div>
           </div>
 
@@ -300,12 +436,12 @@
           <div id="kql-audit-section">
             <h3>4.3 KQL Resource Graph Audit: All 11 Verified Role Assignments</h3>
             <p>
-              In enterprise compliance audits, manually clicking through multiple Azure portal blades is inefficient and prone to human oversight. To streamline and standardize least-privilege verification, I used an AI-assisted workflow to construct and validate a <strong>Kusto Query Language (KQL)</strong> audit query in Azure Resource Graph Explorer. In a single execution, it pulls every role assignment across Subscription, Resource Group, Storage Account, and Container levels into one normalized, auditable table.
+              In enterprise compliance audits, manually clicking through Azure portal blades is inefficient and prone to human oversight. To standardize least-privilege verification, I used an AI-assisted workflow to construct and validate a <strong>Kusto Query Language (KQL)</strong> audit query in Azure Resource Graph Explorer. In a single execution, it pulls every role assignment across Subscription, Resource Group, Storage Account, and Container levels into one normalized, auditable table.
             </p>
 
             <div class="code-block">
               <div class="code-header">
-                <span class="code-title">Azure Resource Graph Explorer â€” KQL Audit Script</span>
+                <span class="code-title">Azure Resource Graph Explorer — KQL Audit Script</span>
                 <button class="code-copy-btn" onclick="copyCode(this)">Copy KQL</button>
               </div>
               <pre class="code-content"><code>authorizationresources
@@ -324,7 +460,12 @@
 | order by scope asc</code></pre>
             </div>
 
+            <div class="callout callout-legal" style="margin: 20px 0;">
+              <strong>Audit Evidence Qualification:</strong> The Azure Resource Graph KQL query outputs principal IDs, principal types, role names, and scopes. The display names shown in the accompanying matrix below were resolved separately using the corresponding Microsoft Entra ID directory export. Note that an RBAC assignment inventory reflects explicit role assignments and should be complemented by data-plane access testing to evaluate inherited permissions and conditional access controls.
+            </div>
+
             <div class="compliance-matrix-wrap" style="margin: 28px 0;">
+              <h4 style="color: var(--text-0); margin-bottom: 14px;">Azure RBAC Assignment Inventory (Cross-Referenced with Entra ID Directory)</h4>
               <table class="compliance-table">
                 <thead>
                   <tr>
@@ -408,45 +549,88 @@
             <div class="figure-card" onclick="openLightbox(29)">
               <div class="figure-img-wrap">
                 <img src="../assets/screenshots/30-azure-rbac-kql-audit.png" alt="Azure Resource Graph KQL Audit" loading="lazy">
-                <div class="figure-zoom-hint">ðŸ” Click to Expand</div>
+                <div class="figure-zoom-hint">🔍 Click to Expand</div>
               </div>
               <div class="figure-caption">
-                <strong>Figure 30: Azure Resource Graph KQL RBAC Audit Output</strong> â€” Verified 11-row least-privilege matrix proving mathematical separation of duties across all cloud resources.
+                <strong>Figure 30: Azure Resource Graph KQL RBAC Audit Output</strong> — Verified 11-row least-privilege matrix demonstrating configured role separation across cloud resources.
               </div>
             </div>
           </div>
         </section>
 
-        <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+        <!-- ═══════════════════════════════════════════
              PHASE 3: DATA DISCOVERY
-        â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+        ═══════════════════════════════════════════ -->
         <section id="phase-3">
-          <h2>5. Phase 3: Automated Data Discovery &amp; PII Classification in Azure Data Lake</h2>
+          <h2>5. Phase 3: Automated Data Discovery &amp; Classification in Azure Data Lake</h2>
           <p>
             Organizations cannot protect personal data they have not discovered. In high-growth enterprises, departments upload vendor spreadsheets, tax filings, and bank reconciliation statements daily. Static data inventories go stale within weeks.
           </p>
 
-          <h3>5.1 Private Storage Lockdown &amp; Production Datasets</h3>
+          <p>
+            In this architecture, <strong>Microsoft Purview Data Map</strong> operates as the discovery, metadata management, and classification layer:
+          </p>
+
+          <div class="compliance-matrix-wrap" style="margin: 20px 0;">
+            <table class="compliance-table">
+              <thead>
+                <tr>
+                  <th>Platform Layer</th>
+                  <th>Primary Architectural Function</th>
+                  <th>Boundary &amp; Relationship to Other Controls</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Purview Data Map</strong></td>
+                  <td>Metadata discovery, automated scanning, column-level classification</td>
+                  <td>Discovers and catalogs data; does not encrypt raw blob objects or independently enforce DLP.</td>
+                </tr>
+                <tr>
+                  <td><strong>Microsoft Information Protection</strong></td>
+                  <td>Document-level sensitivity labelling and RMS encryption</td>
+                  <td>Protects supported files and documents across endpoints and M365 apps.</td>
+                </tr>
+                <tr>
+                  <td><strong>Purview DLP</strong></td>
+                  <td>Detection and interception of specified data movement</td>
+                  <td>Enforces policy rules at Exchange transport, SharePoint sharing, and Copilot prompts.</td>
+                </tr>
+                <tr>
+                  <td><strong>Purview eDiscovery (Premium)</strong></td>
+                  <td>Investigation, search, review set tagging, and audit evidence export</td>
+                  <td>Operates across indexed M365 repositories to fulfill Data Principal access requests.</td>
+                </tr>
+                <tr>
+                  <td><strong>Azure Storage IAM</strong></td>
+                  <td>Cloud resource and storage container access permissions</td>
+                  <td>Governs Azure management plane and data plane (Blob Data Contributor/Reader).</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>5.1 Private Storage Lockdown &amp; Staging Synthetic Test Datasets</h3>
           <p>
             Anonymous public access was permanently disabled on container <code>finance-documents</code>. I staged four realistic corporate datasets simulating Nexora's B2B operations: <code>bank_reconciliation.csv</code>, <code>card_transactions_test_only.csv</code>, <code>invoice_register.csv</code>, and <code>vendor_master.csv</code>.
           </p>
           <div class="figure-card" onclick="openLightbox(10)">
             <div class="figure-img-wrap">
               <img src="../assets/screenshots/11-azure-private-blob-container.png" alt="Private Blob Container" loading="lazy">
-              <div class="figure-zoom-hint">ðŸ” Click to Expand</div>
+              <div class="figure-zoom-hint">🔍 Click to Expand</div>
             </div>
             <div class="figure-caption">
-              <strong>Figure 11: Private Storage Container Configuration</strong> â€” Eliminating public blob access and enforcing Azure AD authenticated requests.
+              <strong>Figure 11: Private Storage Container Configuration</strong> — Eliminating public blob access and enforcing Azure AD authenticated requests.
             </div>
           </div>
 
           <div class="figure-card" onclick="openLightbox(11)">
             <div class="figure-img-wrap">
               <img src="../assets/screenshots/12-azure-staged-financial-datasets.png" alt="Staged Financial Datasets" loading="lazy">
-              <div class="figure-zoom-hint">ðŸ” Click to Expand</div>
+              <div class="figure-zoom-hint">🔍 Click to Expand</div>
             </div>
             <div class="figure-caption">
-              <strong>Figure 12: Staged Financial &amp; Vendor Datasets</strong> â€” Staging reconciliation CSVs containing PAN and cardholder identifiers.
+              <strong>Figure 12: Staged Financial &amp; Vendor Datasets</strong> — Staging reconciliation CSVs containing PAN and cardholder identifiers.
             </div>
           </div>
 
@@ -457,77 +641,93 @@
           <div class="figure-card" onclick="openLightbox(12)">
             <div class="figure-img-wrap">
               <img src="../assets/screenshots/13-purview-datamap-source-registration.png" alt="Purview Data Map Source Registration" loading="lazy">
-              <div class="figure-zoom-hint">ðŸ” Click to Expand</div>
+              <div class="figure-zoom-hint">🔍 Click to Expand</div>
             </div>
             <div class="figure-caption">
-              <strong>Figure 13: Keyless Purview Source Registration</strong> â€” Authenticating scans via System-Assigned Managed Identity without persistent access keys.
+              <strong>Figure 13: Keyless Purview Source Registration</strong> — Authenticating scans via System-Assigned Managed Identity without persistent access keys.
             </div>
           </div>
 
           <h3>5.3 Automated Column-Level PAN Auto-Classification</h3>
           <p>
-            Upon executing automated scanning, Purview cataloged all four CSV assets into the <strong>Purview Unified Catalog</strong>. The classification engine automatically inspected column contents, identified pattern matches for <code>India Permanent Account Number (PAN)</code> inside the <code>Beneficiary_PAN_TEST</code> column of <code>bank_reconciliation.csv</code>, and applied statutory classification tags without manual human intervention.
+            Upon executing automated scanning, Purview cataloged all four CSV assets into the <strong>Purview Unified Catalog</strong>. The classification engine automatically inspected column contents, identified pattern matches for <code>India Permanent Account Number (PAN)</code> inside the <code>Beneficiary_PAN_TEST</code> column of <code>bank_reconciliation.csv</code>, and applied classification tags without manual intervention.
           </p>
           <div class="figure-card" onclick="openLightbox(13)">
             <div class="figure-img-wrap">
               <img src="../assets/screenshots/14-purview-unified-catalog-assets.png" alt="Purview Unified Catalog Assets" loading="lazy">
-              <div class="figure-zoom-hint">ðŸ” Click to Expand</div>
+              <div class="figure-zoom-hint">🔍 Click to Expand</div>
             </div>
             <div class="figure-caption">
-              <strong>Figure 14: Unified Catalog Asset Inventory</strong> â€” Automated indexing of all financial CSV tables into the enterprise data map.
+              <strong>Figure 14: Unified Catalog Asset Inventory</strong> — Automated indexing of all financial CSV tables into the enterprise data map.
             </div>
           </div>
 
           <div class="figure-card" onclick="openLightbox(14)">
             <div class="figure-img-wrap">
               <img src="../assets/screenshots/15-purview-bank-reconciliation-schema.png" alt="PAN Auto-Classification Schema" loading="lazy">
-              <div class="figure-zoom-hint">ðŸ” Click to Expand</div>
+              <div class="figure-zoom-hint">🔍 Click to Expand</div>
             </div>
             <div class="figure-caption">
-              <strong>Figure 15: Column-Level PII Auto-Detection</strong> â€” Automated classification of India PAN within <code>Beneficiary_PAN_TEST</code>.
+              <strong>Figure 15: Column-Level PII Auto-Detection</strong> — Automated classification of India PAN within <code>Beneficiary_PAN_TEST</code>.
             </div>
+          </div>
+
+          <!-- 5.4 Purview Lifecycle Subsection -->
+          <div id="purview-lifecycle" style="margin-top: 36px; padding: 22px 26px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md);">
+            <h3 style="color: var(--accent-cyan); font-size: 1.15rem; margin-bottom: 12px;">5.4 Microsoft Purview Data Governance — Implementation Context and Product Lifecycle (November 2026)</h3>
+            <p style="font-size: 0.95rem; line-height: 1.8; color: var(--text-2);">
+              On <strong>12 November 2026</strong>, Microsoft officially announced the retirement of classic Microsoft Purview Data Governance capabilities, including Data Map, Unified Catalog, Workflows, and classic Azure Purview governance accounts:
+            </p>
+            <ul style="font-size: 0.95rem; line-height: 1.8; color: var(--text-2); margin-left: 20px;">
+              <li><strong>Retirement Scope:</strong> New classic Microsoft Purview Data Governance accounts can no longer be created. Existing governance deployments remain in active maintenance mode through <strong>12 November 2027</strong>.</li>
+              <li><strong>Strategic Direction:</strong> Microsoft is directing future enterprise data cataloging, lineage, and metadata governance toward <strong>Microsoft Fabric</strong> and <strong>OneLake Catalog</strong>.</li>
+              <li><strong>Data Security Unaffected:</strong> This lifecycle transition applies strictly to classic Data Governance. <strong>Microsoft Purview Data Security and Compliance solutions</strong>—including Data Loss Prevention (DLP), Sensitivity Labels, Information Protection, and eDiscovery—are completely unaffected by this announcement.</li>
+            </ul>
+            <p style="font-size: 0.95rem; line-height: 1.8; color: var(--text-2); margin-top: 12px;">
+              <strong>Historical Lab Evidence:</strong> In this portfolio environment, the classic Microsoft Purview Data Map experience remains visible and fully functional within the tenant, allowing hands-on execution of storage registration, managed identity scanning, and automated schema classification as shown in Figures 13–15. For future production architectures, these governance workflows will be built on Microsoft Fabric and OneLake Catalog.
+            </p>
           </div>
         </section>
 
-        <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+        <!-- ═══════════════════════════════════════════
              PHASE 4: SENSITIVITY LABELS & LIVE DLP
-        â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+        ═══════════════════════════════════════════ -->
         <section id="phase-4">
-          <h2>6. Phase 4: Cryptographic Sensitivity Labels, Custom Healthcare Regex &amp; Live DLP Exfiltration Prevention</h2>
+          <h2>6. Phase 4: Sensitivity Labels, Custom Regex Classifier &amp; Live DLP Exfiltration Prevention</h2>
           <p>
-            Classification without automated enforcement is incomplete. In this phase, I configured end-to-end preventative guardrails to ensure sensitive personal records cannot leave Nexora's operational boundary via email or cloud file sharing.
+            Data discovery without automated policy enforcement is incomplete. In this phase, I configured end-to-end preventative guardrails to prevent sensitive personal records from leaving Nexora's operational perimeter via email or unauthorized sharing channels.
           </p>
 
-          <h3>6.1 Priority 9 Cryptographic Sensitivity Labeling</h3>
+          <h3>6.1 Priority 9 Sensitivity Label Configuration</h3>
           <p>
-            I engineered a top-priority sensitivity label: <code>Confidential - PII and Financial</code> at <strong>Priority 9</strong> (seated above Public, General, and Internal Confidential). This label enforces AES-256 encryption restricted strictly to authenticated Nexora employees and requires mandatory user justification for any attempt to downgrade.
+            I engineered a sensitivity label: <code>Confidential - PII and Financial</code> at <strong>Priority 9</strong> within the label hierarchy. In Microsoft Purview, Priority 9 establishes label precedence and conflict resolution rules when multiple policies match, ensuring high-risk labels take precedence over lower tiers. The label enforces document protection restricted to authenticated enterprise identities and requires user justification for downgrade events.
           </p>
           <div class="figure-card" onclick="openLightbox(15)">
             <div class="figure-img-wrap">
               <img src="../assets/screenshots/16-sensitivity-label-priority-9.png" alt="Sensitivity Label Priority 9" loading="lazy">
-              <div class="figure-zoom-hint">ðŸ” Click to Expand</div>
+              <div class="figure-zoom-hint">🔍 Click to Expand</div>
             </div>
             <div class="figure-caption">
-              <strong>Figure 16: Cryptographic Sensitivity Label Priority 9</strong> â€” Establishing top-tier encryption and rights management for PII and financial records.
+              <strong>Figure 16: Cryptographic Sensitivity Label Priority 9</strong> — Establishing top-tier encryption and rights management for PII and financial records.
             </div>
           </div>
 
           <div class="figure-card" onclick="openLightbox(16)">
             <div class="figure-img-wrap">
               <img src="../assets/screenshots/17-global-label-publishing-policy.png" alt="Global Label Publishing Policy" loading="lazy">
-              <div class="figure-zoom-hint">ðŸ” Click to Expand</div>
+              <div class="figure-zoom-hint">🔍 Click to Expand</div>
             </div>
             <div class="figure-caption">
-              <strong>Figure 17: Global Publishing &amp; Downgrade Justification</strong> â€” Publishing label policies to <code>SG-NEX-All-Employees</code> with audit logging.
+              <strong>Figure 17: Global Publishing &amp; Downgrade Justification</strong> — Publishing label policies to <code>SG-NEX-All-Employees</code> with audit logging.
             </div>
           </div>
 
-          <h3>6.2 Custom Healthcare &amp; Patient ID Regex Classifier</h3>
+          <h3>6.2 Custom Healthcare Regex Classifier (NEX-PAT Pattern)</h3>
           <p>
-            A common limitation of built-in cloud compliance engines is that while they detect standard national IDs (like Indian PAN or credit cards), they completely fail to recognize structured domain-specific identifiers. For Nexora's healthcare advisory branch, client patient records use a structured alphanumeric format: <code>NDIS-XXX-XXX-XXX</code>.
+            A common limitation of built-in compliance classifiers is that while they detect standard national IDs (like Indian PAN or credit cards), they do not detect proprietary healthcare identifiers. For Nexora's healthcare advisory branch, client patient records use a structured alphanumeric format: <code>NEX-PAT-XXX-XXX-XXX</code>.
           </p>
           <p>
-            To address this gap, I authored a custom Sensitive Information Type (SIT) utilizing regex pattern matching combined with semantic proximity keywords (such as <em>Patient, Healthcare, Disability, Support Coordination</em>) within 300 characters, achieving high-confidence detection for client healthcare identifiers.
+            To address this gap, I authored a custom Sensitive Information Type (SIT) utilizing regex pattern matching combined with semantic proximity keywords (such as <em>Patient, Healthcare, Disability, Support Coordination</em>) within 300 characters, creating a reliable regex-based detection demonstration:
           </p>
 
           <div class="code-block">
@@ -535,33 +735,33 @@
               <span class="code-title">Custom Sensitive Information Type Specification</span>
               <button class="code-copy-btn" onclick="copyCode(this)">Copy Regex</button>
             </div>
-            <pre class="code-content"><code>Pattern:    \bNDIS-\d{3}-\d{3}-\d{3}\b
+            <pre class="code-content"><code>Pattern:    (?:NEX-PAT|NDIS)-\d{3}-\d{3}-\d{3}
 Proximity:  300 characters
 Keywords:   Healthcare, Patient, Disability, Plan Manager, Support Coordination
-Confidence: High (85%+)</code></pre>
+Match Type: Regex pattern with semantic keyword corroboration</code></pre>
           </div>
 
           <div class="figure-card" onclick="openLightbox(17)">
             <div class="figure-img-wrap">
               <img src="../assets/screenshots/18-custom-ndis-regex-classifier.png" alt="Custom NDIS Regex Classifier" loading="lazy">
-              <div class="figure-zoom-hint">ðŸ” Click to Expand</div>
+              <div class="figure-zoom-hint">🔍 Click to Expand</div>
             </div>
             <div class="figure-caption">
-              <strong>Figure 18: Custom Healthcare &amp; Patient ID Regex Classifier</strong> â€” Detecting proprietary healthcare identification numbers that evade standard classifiers.
+              <strong>Figure 18: Custom Healthcare &amp; Patient ID Regex Classifier</strong> — Detecting proprietary healthcare identification numbers that evade standard classifiers.
             </div>
           </div>
 
           <h3>6.3 Auto-Labeling Policy Simulation</h3>
           <p>
-            Deploying encryption policies directly into production can break business workflows if false positives occur. I configured policy <code>Nexora-AutoLabel-Confidential-PII</code> in simulation mode across Exchange, SharePoint, and OneDrive, validating rule matches against staged datasets before non-disruptive production enforcement.
+            Deploying encryption policies directly into active workloads can disrupt business operations if false positives occur. I configured policy <code>Nexora-AutoLabel-Confidential-PII</code> in simulation mode across Exchange, SharePoint, and OneDrive, verifying rule matches against staged datasets before non-disruptive production activation.
           </p>
           <div class="figure-card" onclick="openLightbox(18)">
             <div class="figure-img-wrap">
               <img src="../assets/screenshots/19-auto-labeling-simulation-matches.png" alt="Auto-Labeling Simulation Matches" loading="lazy">
-              <div class="figure-zoom-hint">ðŸ” Click to Expand</div>
+              <div class="figure-zoom-hint">🔍 Click to Expand</div>
             </div>
             <div class="figure-caption">
-              <strong>Figure 19: Auto-Labeling Simulation Engine</strong> â€” Verifying live rule matches across cloud repositories prior to full production activation.
+              <strong>Figure 19: Auto-Labeling Simulation Engine</strong> — Verifying live rule matches across cloud repositories prior to full production activation.
             </div>
           </div>
 
@@ -570,85 +770,88 @@ Confidence: High (85%+)</code></pre>
             With policies synchronized across the tenant, I conducted a live data exfiltration test. A simulated internal analyst drafted an outbound email to an external personal Gmail address, attaching synthetic Indian PAN numbers (<code>ZZZPX5001J</code>), credit card numbers (<code>4111111111111111</code>), and structured patient identifiers (<code>NDIS-430-881-922</code>).
           </p>
           <p>
-            The moment the user clicked send, Microsoft Purview DLP intercepted the transmission at the Exchange transport pipeline. The message was blocked immediately, and Outlook generated an automated policy bounce notification: <em>"Message Blocked: Confidential Q4 Client &amp; Employee Payout Verification"</em>. Zero personal data reached the external recipient.
+            The moment the user sent the email, Microsoft Purview DLP intercepted the transmission at the Exchange transport pipeline. The configured Exchange Online DLP policy generated a blocking notification during the test, displaying: <em>"Message Blocked: Confidential Q4 Client &amp; Employee Payout Verification"</em>. The observed outcome demonstrates the configured policy response; in production, definitive non-delivery is verified through Exchange message-trace logs.
           </p>
 
           <div class="figure-card" onclick="openLightbox(19)">
             <div class="figure-img-wrap">
               <img src="../assets/screenshots/20-active-dlp-policies-overview.png" alt="Active DLP Policies Overview" loading="lazy">
-              <div class="figure-zoom-hint">ðŸ” Click to Expand</div>
+              <div class="figure-zoom-hint">🔍 Click to Expand</div>
             </div>
             <div class="figure-caption">
-              <strong>Figure 20: Active DLP Policy Suite</strong> â€” Production synchronization of <code>Nexora-PII-Financial-Leak-Prevention</code>.
+              <strong>Figure 20: Active DLP Policy Suite</strong> — Production synchronization of <code>Nexora-PII-Financial-Leak-Prevention</code>.
             </div>
           </div>
 
           <div class="figure-card" onclick="openLightbox(20)">
             <div class="figure-img-wrap">
               <img src="../assets/screenshots/21-m365-external-dlp-rule.png" alt="M365 External DLP Rule" loading="lazy">
-              <div class="figure-zoom-hint">ðŸ” Click to Expand</div>
+              <div class="figure-zoom-hint">🔍 Click to Expand</div>
             </div>
             <div class="figure-caption">
-              <strong>Figure 21: External Recipient Blocking Rule</strong> â€” Configured to intercept sensitive identifiers across Exchange and cloud sharing channels.
+              <strong>Figure 21: External Recipient Blocking Rule</strong> — Configured to intercept sensitive identifiers across Exchange and cloud sharing channels.
             </div>
           </div>
 
           <div class="figure-card" onclick="openLightbox(21)">
             <div class="figure-img-wrap">
               <img src="../assets/screenshots/22-live-outlook-dlp-block-proof.png" alt="Live Outlook DLP Block Proof" loading="lazy">
-              <div class="figure-zoom-hint">ðŸ” Click to Expand</div>
+              <div class="figure-zoom-hint">🔍 Click to Expand</div>
             </div>
             <div class="figure-caption">
-              <strong>Figure 22: LIVE PROOF â€” Real-Time Outlook Exfiltration Block</strong> â€” Outlook blocking external email containing PAN, credit card, and patient IDs with policy notice.
+              <strong>Figure 22: LIVE PROOF — Real-Time Outlook Exfiltration Block</strong> — Outlook blocking external email containing PAN, credit card, and patient IDs with policy notice.
             </div>
           </div>
         </section>
 
-        <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+        <!-- ═══════════════════════════════════════════
              PHASE 5: COPILOT AI GOVERNANCE
-        â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+        ═══════════════════════════════════════════ -->
         <section id="phase-5">
-          <h2>7. Phase 5: Generative AI &amp; Microsoft Copilot Data Leak Prevention</h2>
+          <h2>7. Phase 5: Generative AI &amp; Microsoft 365 Copilot Data Loss Prevention</h2>
           <p>
-            Generative AI tools introduce an acute shadow-exfiltration risk. Under Section 6 of India's DPDP Act, personal data collected for business consulting cannot be ingested into large language models without explicit purpose consent. If employees paste raw client PAN numbers or patient medical notes into AI assistants for summarization, a statutory breach occurs instantly.
+            Generative AI tools introduce novel shadow-exfiltration risks. Under Section 6 of India's DPDP Act, personal data collected for business consulting cannot be ingested into large language models without explicit purpose consent. If employees paste client PAN numbers or patient medical notes into AI assistants for summarization, a serious data security failure occurs.
           </p>
 
           <h3>7.1 Dedicated Microsoft 365 Copilot DLP Architecture</h3>
           <p>
-            To address this threat, I deployed policy <code>Nexora-Copilot-PII-Protection</code> configured specifically for Microsoft 365 Copilot, Copilot Chat, and Copilot Cowork. This policy enforces real-time inspection of all inbound prompt tokens and outbound model completions.
+            To address this threat, I deployed policy <code>Nexora-Copilot-PII-Protection</code> configured for Microsoft 365 Copilot and Copilot Chat. Microsoft documents prompt-level sensitive-information blocking as a preview capability subject to tenant rollout considerations.
+          </p>
+          <p style="font-size: 0.95rem; color: var(--text-2); background: rgba(56, 189, 248, 0.05); padding: 12px 16px; border-left: 3px solid var(--accent-cyan); border-radius: var(--radius-sm); margin: 14px 0;">
+            ℹ️ <strong>Scope &amp; Technical Boundary:</strong> In this configuration, the DLP policy inspects the text entered directly into the Copilot chat prompt. Microsoft documentation notes that files uploaded directly into prompts are not scanned by this specific prompt DLP control, and sensitivity-labelled files are governed by separate document protection policies. The blocked prompt demonstrates a technical data-security control rather than proof of complete statutory compliance.
           </p>
           <div class="figure-card" onclick="openLightbox(22)">
             <div class="figure-img-wrap">
               <img src="../assets/screenshots/23-copilot-dlp-policy-config.png" alt="Copilot DLP Policy Config" loading="lazy">
-              <div class="figure-zoom-hint">ðŸ” Click to Expand</div>
+              <div class="figure-zoom-hint">🔍 Click to Expand</div>
             </div>
             <div class="figure-caption">
-              <strong>Figure 23: Microsoft 365 Copilot DLP Configuration</strong> â€” Activating real-time prompt scanning across Copilot Chat and AI workspaces.
+              <strong>Figure 23: Microsoft 365 Copilot DLP Configuration</strong> — Activating real-time prompt scanning across Copilot Chat and AI workspaces.
             </div>
           </div>
 
           <h3>7.2 LIVE PROOF: Copilot Prompt Interception in Real-Time</h3>
           <p>
-            To verify enforcement, I entered an operational prompt directly into Microsoft 365 Copilot Chat containing synthetic PAN, credit card, and patient identifiers. The Copilot DLP engine intercepted the payload instantly, halting processing and displaying an organizational security alert: <em>"Your prompt contains sensitive information restricted by your organization's compliance policy."</em>
+            To verify enforcement, I entered an operational prompt directly into Microsoft 365 Copilot Chat containing synthetic PAN, credit card, and patient identifiers. The Copilot DLP engine intercepted the payload instantly, halting processing and displaying an organizational security notice: <em>"Your prompt contains sensitive information restricted by your organization's compliance policy."</em>
           </p>
           <div class="figure-card" onclick="openLightbox(23)">
             <div class="figure-img-wrap">
               <img src="../assets/screenshots/24-live-copilot-prompt-block-proof.png" alt="Live Copilot Prompt Block Proof" loading="lazy">
-              <div class="figure-zoom-hint">ðŸ” Click to Expand</div>
+              <div class="figure-zoom-hint">🔍 Click to Expand</div>
             </div>
             <div class="figure-caption">
-              <strong>Figure 24: LIVE PROOF â€” Copilot Prompt Interception</strong> â€” Real-time refusal of prompt injection containing sensitive PII under DPDP Act Section 6.
+              <strong>Figure 24: LIVE PROOF — Copilot Prompt Interception</strong> — Real-time refusal of prompt injection containing sensitive PII under DPDP Act Section 6.
             </div>
           </div>
         </section>
 
-        <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+        <!-- ═══════════════════════════════════════════
              PHASE 6: STATUTORY DSAR
-        â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+        ═══════════════════════════════════════════ -->
         <section id="phase-6">
-          <h2>8. Phase 6: Statutory DSAR Fulfillment, Third-Party Redaction &amp; Chain-of-Custody</h2>
+          <h2>8. Phase 6: Simulated Statutory DSAR Fulfillment, Third-Party Redaction &amp; Audit Trail</h2>
           <p>
-            Under Section 11 of India's DPDP Act 2023, Data Principals possess the statutory right to request a summary of their personal data processed by the organization. However, enterprise records frequently store multiple individuals' information in unified spreadsheets. Fulfilling an access request by carelessly exporting raw files would breach third-party privacy.
+            Under Section 11 of India's DPDP Act 2023 (scheduled for substantive commencement on 13 May 2027), Data Principals possess the statutory right to request a summary of their personal data processed by the organization. However, enterprise records frequently store multiple individuals' information in unified spreadsheets. Fulfilling an access request by carelessly exporting raw files would breach third-party privacy.
           </p>
 
           <h3>8.1 Multi-Tenant SharePoint Financial Repository</h3>
@@ -658,72 +861,102 @@ Confidence: High (85%+)</code></pre>
           <div class="figure-card" onclick="openLightbox(24)">
             <div class="figure-img-wrap">
               <img src="../assets/screenshots/25-sharepoint-finance-portal-datasets.png" alt="SharePoint Finance Portal Datasets" loading="lazy">
-              <div class="figure-zoom-hint">ðŸ” Click to Expand</div>
+              <div class="figure-zoom-hint">🔍 Click to Expand</div>
             </div>
             <div class="figure-caption">
-              <strong>Figure 25: SharePoint Finance Portal Repository</strong> â€” Private enterprise repository housing multi-party vendor and financial records.
+              <strong>Figure 25: SharePoint Finance Portal Repository</strong> — Private enterprise repository housing multi-party vendor and financial records.
             </div>
           </div>
 
-          <h3>8.2 Targeted eDiscovery Premium Case Creation</h3>
+          <!-- Scenario Clarification -->
+          <div id="dsar-scenario-clarification" style="margin: 28px 0; padding: 22px 26px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md);">
+            <h3 style="color: var(--accent-cyan); font-size: 1.15rem; margin-bottom: 12px;">8.2 Scenario Clarification — Individual Sole-Proprietor Vendor (Option A Narrative Alignment)</h3>
+            <p style="font-size: 0.95rem; line-height: 1.8; color: var(--text-2);">
+              In Figures 26–29, the eDiscovery query targets <code>Demo Vendor 0002 Group</code>. Within the synthetic Nexora case study scenario, this is modelled as follows:
+            </p>
+            <ul style="font-size: 0.95rem; line-height: 1.8; color: var(--text-2); margin-left: 20px;">
+              <li><strong>Data Principal:</strong> <code>Rajesh Verma</code>, a fictional natural person operating an individual sole-proprietorship business.</li>
+              <li><strong>Data Fiduciary:</strong> Nexora Consulting.</li>
+              <li><strong>Vendor Account Reference:</strong> <code>Demo Vendor 0002 Group</code> is the internal corporate vendor-account identifier assigned to Rajesh Verma's sole-proprietor business.</li>
+              <li><strong>Personal Data Under Review:</strong> Synthetic individual PAN and proprietor-linked personal bank account details maintained for vendor onboarding, invoice reconciliation, and payment settlement.</li>
+              <li><strong>Statutory Grounds:</strong> Rajesh Verma voluntarily provided his personal data for vendor onboarding and payment settlement purposes without indicating non-consent (modelled against Section 7(a) legitimate uses).</li>
+              <li><strong>Query Purpose:</strong> The eDiscovery query uses the vendor account code as a search parameter to locate all correspondence, payment sheets, and records containing the natural person's personal data. The vendor code is a search tool, not the Data Principal itself.</li>
+            </ul>
+          </div>
+
+          <h3>8.3 Targeted eDiscovery Premium Case Creation</h3>
           <p>
-            To fulfill statutory request <code>DSAR-2026-001</code>, I established a formal legal case in <strong>Microsoft Purview eDiscovery (Premium)</strong>. Utilizing KQL search syntax targeting <code>Demo Vendor 0002 Group</code> across SharePoint and Exchange, the search query isolated exactly 3 matching files (272,103 bytes) while excluding unrelated enterprise logs.
+            To fulfill simulated request <code>DSAR-2026-001</code>, I established a formal legal case in <strong>Microsoft Purview eDiscovery (Premium)</strong>. Utilizing KQL search syntax targeting <code>Demo Vendor 0002 Group</code> across SharePoint and Exchange, the search query isolated exactly 3 matching files (272,103 bytes) while excluding non-responsive enterprise data.
           </p>
           <div class="figure-card" onclick="openLightbox(25)">
             <div class="figure-img-wrap">
               <img src="../assets/screenshots/26-ediscovery-dsar-case.png" alt="eDiscovery DSAR Case" loading="lazy">
-              <div class="figure-zoom-hint">ðŸ” Click to Expand</div>
+              <div class="figure-zoom-hint">🔍 Click to Expand</div>
             </div>
             <div class="figure-caption">
-              <strong>Figure 26: eDiscovery Premium DSAR Case</strong> â€” Provisioning case <code>DSAR-2026-001-Vendor-and-Employee-Access-Request</code> under DPDP Act Section 11.
+              <strong>Figure 26: eDiscovery Premium DSAR Case</strong> — Provisioning case <code>DSAR-2026-001-Vendor-and-Employee-Access-Request</code> under DPDP Act Section 11.
             </div>
           </div>
 
           <div class="figure-card" onclick="openLightbox(26)">
             <div class="figure-img-wrap">
               <img src="../assets/screenshots/27-ediscovery-dsar-search-query.png" alt="DSAR Search Query" loading="lazy">
-              <div class="figure-zoom-hint">ðŸ” Click to Expand</div>
+              <div class="figure-zoom-hint">🔍 Click to Expand</div>
             </div>
             <div class="figure-caption">
-              <strong>Figure 27: Targeted DSAR Search Query</strong> â€” Precisely isolating 3 relevant financial files while filtering out non-responsive enterprise data.
+              <strong>Figure 27: Targeted DSAR Search Query</strong> — Precisely isolating 3 relevant financial files while filtering out non-responsive enterprise data.
             </div>
           </div>
 
-          <h3>8.3 Review Set Tagging &amp; Third-Party PII Redaction</h3>
+          <!-- Section 12 Lifecycle -->
+          <div id="section-12-lifecycle" style="margin: 28px 0; padding: 20px 24px; background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: var(--radius-md);">
+            <h4 style="color: var(--accent-green); margin-bottom: 10px;">DPDP Act Section 12 — Correction &amp; Erasure Workflow Lifecycle</h4>
+            <p style="font-size: 0.95rem; line-height: 1.8; color: var(--text-2);">
+              Beyond Section 11 access, Section 12 (effective 13 May 2027) establishes the Data Principal's right to correction, completion, updating, and erasure of personal data. In Nexora's operational architecture, this follows a structured seven-stage lifecycle:
+            </p>
+            <p style="font-family: var(--font-mono); font-size: 0.9rem; color: var(--accent-cyan); background: var(--bg-1); padding: 12px 16px; border-radius: var(--radius-sm); margin: 12px 0;">
+              Request → Identity Verification → Discovery → Legal/Retention Assessment → Approval → Execution (Correction/Erasure) → Audit Evidence
+            </p>
+            <p style="font-size: 0.92rem; color: var(--text-2); margin-top: 8px;">
+              Under Section 12(3), personal data erasure is subject to statutory retention exceptions where retention remains necessary for the specified purpose or for compliance with any law in force (e.g. tax laws requiring 8-year financial records retention).
+            </p>
+          </div>
+
+          <h3>8.4 Review Set Tagging &amp; Third-Party Redaction Assessment</h3>
           <p>
-            Upon ingesting the files into review set <code>DSAR-2026-001-Review-Set</code>, inspection revealed that <code>vendor_master.csv</code> contained PAN numbers belonging to unrelated external vendors. Releasing this file unedited would constitute a severe personal data breach. I applied a mandatory <code>Requires-Redaction</code> tag, routing the dataset for column-level stripping prior to external release.
+            Upon ingesting the files into review set <code>DSAR-2026-001-Review-Set</code>, inspection revealed that <code>vendor_master.csv</code> contained banking and tax details belonging to unrelated third parties. Rather than releasing raw files, the records were flagged for disclosure assessment and tagged with <code>Requires-Redaction</code>, ensuring third-party identifiers are evaluated and masked prior to disclosure.
           </p>
           <div class="figure-card" onclick="openLightbox(27)">
             <div class="figure-img-wrap">
               <img src="../assets/screenshots/28-ediscovery-reviewset-redaction-tag.png" alt="Review Set Redaction Tag" loading="lazy">
-              <div class="figure-zoom-hint">ðŸ” Click to Expand</div>
+              <div class="figure-zoom-hint">🔍 Click to Expand</div>
             </div>
             <div class="figure-caption">
-              <strong>Figure 28: Third-Party PII Redaction Tagging</strong> â€” Flagging co-located third-party PAN records to prevent unlawful cross-party disclosure.
+              <strong>Figure 28: Third-Party PII Redaction Tagging</strong> — Flagging co-located third-party PAN records to prevent unlawful cross-party disclosure.
             </div>
           </div>
 
-          <h3>8.4 Sandboxed Reviewer RBAC &amp; 4-File Chain-of-Custody Export</h3>
+          <h3>8.5 Sandboxed Reviewer RBAC &amp; 4-File Audit Trail Export</h3>
           <p>
-            To preserve evidence integrity, I assigned Purview Role Group <code>Reviewer</code> (backed by <code>SG-NEX-Legal-Compliance</code>) strictly to this single case. Reviewers can inspect and tag records within case <code>DSAR-2026-001</code>, but are barred from global export privileges.
+            To preserve evidence integrity, I assigned Purview Role Group <code>Reviewer</code> (backed by <code>SG-NEX-Legal-Compliance</code>) strictly to this single case. Reviewers can inspect and tag records within case <code>DSAR-2026-001</code>, but are barred from global tenant export privileges.
           </p>
           <p>
-            Finally, I exported the official <strong>4-file Chain-of-Custody Audit Report</strong> (<code>Summary.csv</code>, <code>Locations.csv</code>, <code>Settings.csv</code>, and <code>Statistics.csv</code>) backed by Microsoft 365 Unified Audit Loggingâ€”providing unassailable forensic proof to regulators.
+            Finally, I exported the official <strong>4-file Audit Report</strong> (<code>Summary.csv</code>, <code>Locations.csv</code>, <code>Settings.csv</code>, and <code>Statistics.csv</code>) backed by Microsoft 365 Unified Audit Logging—providing supporting audit and process evidence for regulatory review.
           </p>
           <div class="figure-card" onclick="openLightbox(28)">
             <div class="figure-img-wrap">
               <img src="../assets/screenshots/29-ediscovery-group-based-rbac.png" alt="eDiscovery Group-Based RBAC" loading="lazy">
-              <div class="figure-zoom-hint">ðŸ” Click to Expand</div>
+              <div class="figure-zoom-hint">🔍 Click to Expand</div>
             </div>
             <div class="figure-caption">
-              <strong>Figure 29: Case-Sandboxed Reviewer RBAC &amp; Chain-of-Custody</strong> â€” Group-based role delegation with immutable 4-file audit trail export.
+              <strong>Figure 29: Case-Sandboxed Reviewer RBAC &amp; Chain-of-Custody</strong> — Group-based role delegation with immutable 4-file audit trail export.
             </div>
           </div>
         </section>
 
-        <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+        <!-- ═══════════════════════════════════════════
              ENGINEERING LESSONS
-        â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+        ═══════════════════════════════════════════ -->
         <section id="engineering-lessons">
           <h2>9. Real-World Cloud Engineering &amp; Troubleshooting Lessons</h2>
           <p>
@@ -732,41 +965,41 @@ Confidence: High (85%+)</code></pre>
 
           <h3>Lesson 1: Tenant Hydration &amp; Audit Engine Activation via PowerShell V3</h3>
           <p>
-            In newly provisioned Microsoft 365 enterprise tenants, Microsoft maintains the Exchange and Purview compliance engine in a "dehydrated" (quiescent) state to conserve hyperscale compute resources. When attempting to activate Purview Auto-Labeling and unified audit logging via the graphical portal, the API consistently failed with <code>InvalidOperationInDehydratedContextException</code> and <code>UnifiedAuditLogDisabledException</code>.
+            In newly provisioned Microsoft 365 enterprise tenants, Exchange Online and compliance configurations may be initialized in a quiescent or "dehydrated" state. When attempting to activate automated compliance features and unified audit logging via the graphical portal, the API generated <code>InvalidOperationInDehydratedContextException</code> and <code>UnifiedAuditLogDisabledException</code>.
           </p>
           <p>
             <strong>Resolution:</strong> Utilizing an AI-assisted troubleshooting workflow, I identified and executed the necessary Exchange Online PowerShell V3 commands to force organization customization and explicitly enable unified audit logging:
           </p>
           <div class="code-block">
             <div class="code-header">
-              <span class="code-title">Exchange Online PowerShell V3 â€” Tenant Hydration</span>
+              <span class="code-title">Exchange Online PowerShell V3 — Tenant Hydration</span>
               <button class="code-copy-btn" onclick="copyCode(this)">Copy PowerShell</button>
             </div>
-            <pre class="code-content"><code># Install and import Exchange Online V3 module with AllowClobber
+            <pre class="code-content"><code># Install and import Exchange Online V3 module
 Install-Module -Name ExchangeOnlineManagement -Force -AllowClobber
-Connect-ExchangeOnline -UserPrincipalName admin@tarunbhatia...
+Connect-ExchangeOnline -UserPrincipalName admin@nexoraconsulting.onmicrosoft.com
 
-# Wake up tenant configuration from dehydrated state
+# Activate tenant configuration from quiescent state
 Enable-OrganizationCustomization
 
-# Verify hydration state across Indian regional endpoints
+# Verify hydration state across regional endpoints
 Get-OrganizationConfig | Select-Object IsDehydrated, Name
 
 # Enable Microsoft 365 Unified Audit Log ingestion
 Set-AdminAuditLogConfig -UnifiedAuditLogIngestionEnabled $true</code></pre>
           </div>
 
-          <h3>Lesson 2: Exchange DLP Validation API (`InvalidBlockAccessActionException`)</h3>
+          <h3>Lesson 2: Exchange DLP Validation API (<code>InvalidBlockAccessActionException</code>)</h3>
           <p>
             When configuring the outbound data exfiltration rule in Purview DLP, the Exchange transport pipeline rejected policy activation with <code>InvalidBlockAccessActionException</code>.
           </p>
           <p>
-            <strong>Resolution:</strong> Microsoft's underlying DLP API enforces an undocumented validation requirement: configuring <em>"Block people outside your organization"</em> requires that <em>"User notifications &amp; Policy tips"</em> be toggled to <strong>On</strong> simultaneously. This design requirement ensures that users receive transparent contextual policy guidance at the exact point of risk rather than silent delivery drops.
+            <strong>Resolution:</strong> In this tenant configuration, enabling the action <em>"Block people outside your organization"</em> required simultaneously activating <em>"User notifications &amp; Policy tips"</em>. This configuration ensures that users receive transparent contextual policy guidance at the exact point of risk rather than silent delivery drops.
           </p>
 
-          <h3>Lesson 3: 3-Tier RBAC Separation of Duties</h3>
+          <h3>Lesson 3: 3-Tier RBAC Separation of Duties Architecture</h3>
           <p>
-            A common security antipattern is attempting to manage all permissions through Entra ID directory roles. Because directory roles carry global blast radiuses, I engineered a 3-tier separation architecture:
+            A common security antipattern is attempting to manage all permissions through Entra ID directory roles. Because directory roles carry global blast radiuses, I engineered a 3-tier separation-of-duties architecture:
           </p>
           <ul>
             <li><strong>Entra PIM:</strong> Used strictly for individual, time-bounded JIT directory elevation.</li>
@@ -775,20 +1008,100 @@ Set-AdminAuditLogConfig -UnifiedAuditLogIngestionEnabled $true</code></pre>
           </ul>
         </section>
 
-        <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-             CONCLUSION
-        â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+        <!-- ═══════════════════════════════════════════
+             10. ADDITIONAL GOVERNANCE CONTEXT
+        ═══════════════════════════════════════════ -->
+        <section id="governance-context">
+          <h2>10. Additional Regulatory &amp; Governance Context</h2>
+          <p>
+            A comprehensive enterprise privacy program extends beyond cloud console toggles. Below are four key governance dimensions addressed within Nexora's operational model:
+          </p>
+
+          <div style="margin: 20px 0; padding: 20px 24px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md);">
+            <h3 style="color: var(--accent-cyan); font-size: 1.1rem; margin-bottom: 8px;">10.1 Data Processor Governance (Section 8(2) &amp; Rule 6(1)(f))</h3>
+            <p style="font-size: 0.95rem; line-height: 1.8; color: var(--text-2);">
+              Under Section 8(2) of the DPDP Act, 2023, a Data Fiduciary may engage a Data Processor only under a valid contract. Rule 6(1)(f) further requires appropriate contractual provisions for reasonable security safeguards. In Nexora's cloud deployment, Microsoft acts as a Data Processor under Microsoft's Data Protection Addendum (DPA), establishing processing boundaries, sub-processor notification, and data return/deletion commitments.
+            </p>
+          </div>
+
+          <div style="margin: 20px 0; padding: 20px 24px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md);">
+            <h3 style="color: var(--accent-cyan); font-size: 1.1rem; margin-bottom: 8px;">10.2 Personal Data Breach Incident Response Lifecycle</h3>
+            <p style="font-size: 0.95rem; line-height: 1.8; color: var(--text-2);">
+              Section 8(6) and Rule 7 establish a duty to intimate the Data Protection Board of India and affected Data Principals in the event of a personal data breach. The operational incident response pipeline follows six stages:
+            </p>
+            <p style="font-family: var(--font-mono); font-size: 0.88rem; color: var(--accent-green); background: var(--bg-1); padding: 10px 14px; border-radius: var(--radius-sm); margin: 10px 0;">
+              Detection → Containment → Investigation → Impact &amp; Notification Assessment → Remediation → Evidence Preservation
+            </p>
+            <p style="font-size: 0.93rem; line-height: 1.8; color: var(--text-2);">
+              Rule 7 specifies initial intimation to the Board without delay upon becoming aware of a breach, followed by detailed information within 72 hours, covering breach nature, affected data principal categories, severity, and mitigation measures. Note that blocked DLP exfiltration attempts demonstrate preventative controls, not actual breach events.
+            </p>
+          </div>
+
+          <div style="margin: 20px 0; padding: 20px 24px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md);">
+            <h3 style="color: var(--accent-cyan); font-size: 1.1rem; margin-bottom: 8px;">10.3 Significant Data Fiduciaries (Section 10)</h3>
+            <p style="font-size: 0.95rem; line-height: 1.8; color: var(--text-2);">
+              Under Section 10, additional obligations—including an India-based Data Protection Officer (DPO), independent data auditor, periodic Data Protection Impact Assessments (DPIA), and audits—apply only to entities formally notified by the Central Government. Processing financial or healthcare records alone does not establish SDF status. Aadi Dugar's role demonstrates internal governance practices rather than an official statutory SDF designation.
+            </p>
+          </div>
+
+          <div style="margin: 20px 0; padding: 20px 24px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md);">
+            <h3 style="color: var(--accent-cyan); font-size: 1.1rem; margin-bottom: 8px;">10.4 Processing Inventories (RoPA) &amp; Retention Framework</h3>
+            <p style="font-size: 0.95rem; line-height: 1.8; color: var(--text-2);">
+              While the lab environment demonstrates column-level discovery in Azure Blob Storage, a complete enterprise Record of Processing Activities (RoPA) spans legal bases, transfer routes, and retention schedules across all enterprise systems. Under Rule 6(1)(e), the one-year retention requirement relates specifically to security logs and personal data for incident detection and investigation, and should not be confused with general business record retention under Section 8(7) and applicable statutory tax/corporate laws.
+            </p>
+          </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════
+             11. LIMITATIONS & PRODUCTION READINESS
+        ═══════════════════════════════════════════ -->
+        <section id="limitations-readiness">
+          <h2>11. Limitations, Assumptions &amp; Production Readiness</h2>
+          <p>
+            Professional credibility requires complete transparency regarding implementation scope, assumptions, and operational limitations:
+          </p>
+          <div style="margin: 20px 0; padding: 22px 26px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md);">
+            <ul style="font-size: 0.95rem; line-height: 1.85; color: var(--text-2); margin-left: 20px;">
+              <li><strong>Simulated Lab Environment:</strong> Nexora Consulting is a simulated enterprise lab. All business datasets, employee profiles, vendor records, PAN numbers, banking details, card numbers, and patient IDs are synthetic test records.</li>
+              <li><strong>Demonstrated Controls vs. Legal Certification:</strong> The implementation demonstrates selected cloud controls and observed test results; it does not constitute legal advice, ISO certification, or a validated PCI-DSS assessment.</li>
+              <li><strong>Licensing &amp; Feature Availability:</strong> Microsoft Purview and Entra ID features depend on specific licensing tiers (e.g. Microsoft 365 E5 / Compliance E5). Copilot DLP prompt inspection is subject to feature availability and tenant preview status.</li>
+              <li><strong>Purview Data Governance Lifecycle:</strong> Classic Purview Data Map capabilities are in maintenance through 12 November 2027 following Microsoft's announcement; future enterprise governance implementations should align with Microsoft Fabric and OneLake Catalog.</li>
+              <li><strong>RBAC Enumeration vs. Effective Access:</strong> The 11-row KQL inventory reports configured role assignments. Production audits must evaluate effective access including group nesting, Azure Policy assignments, and storage firewall rules.</li>
+              <li><strong>Document Protection vs. Storage Encryption:</strong> M365 sensitivity labels apply document-level rights management to supported office and PDF files; raw unstructured CSV files in Azure Blob storage rely on Azure Storage service-side encryption (SSE) and RBAC data-plane controls.</li>
+              <li><strong>eDiscovery Repository Boundaries:</strong> eDiscovery searches were executed against configured SharePoint and Exchange repositories and do not automatically cover unindexed external databases or third-party SaaS tools.</li>
+              <li><strong>Phased DPDP Commencement:</strong> Substantive obligations under Sections 6(1)–(8), 8(5), 11, and 12 take effect on 13 May 2027; Nexora demonstrates forward-looking readiness.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════
+             12. CONCLUSION
+        ═══════════════════════════════════════════ -->
         <section id="conclusion">
-          <h2>10. Conclusion &amp; Architecture Summary</h2>
+          <h2>12. Conclusion &amp; Architecture Summary</h2>
           <p>
-            The Nexora Consulting implementation validates that statutory compliance under India's DPDP Act 2023, ISO 27001, and PCI-DSS can be transformed from abstract legal liability into an automated, auditable cloud architecture.
+            The Nexora Consulting implementation demonstrates that statutory privacy requirements under India's DPDP Act 2023, ISO/IEC 27001:2022, and PCI-DSS can be systematically translated into demonstrated technical controls and auditable implementation evidence.
           </p>
           <p>
-            By combining Entra PIM's Zero Standing Privileges, Azure's two-tier hierarchical storage RBAC (verified via KQL), Purview's keyless data discovery, real-time Outlook and Copilot DLP guardrails, and case-sandboxed eDiscovery DSAR redaction, the architecture establishes a complete defense-in-depth perimeter for enterprise data protection.
+            By combining Entra PIM's Just-In-Time eligible elevation, Azure's two-tier hierarchical storage RBAC (audited via KQL), Purview's keyless data discovery, real-time Outlook and Copilot DLP guardrails, and case-sandboxed eDiscovery DSAR redaction, the architecture establishes a robust, defense-in-depth foundation for enterprise data governance.
           </p>
+
+          <div style="margin: 28px 0; padding: 22px 26px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md);">
+            <h4 style="color: var(--text-0); margin-bottom: 12px;">Authoritative Legal &amp; Technical References</h4>
+            <ul style="font-size: 0.92rem; line-height: 1.8; color: var(--text-2); margin-left: 18px;">
+              <li><a href="https://www.indiacode.nic.in/bitstream/123456789/22037/1/a2023-22.pdf" target="_blank" rel="noopener">Digital Personal Data Protection Act, 2023 (Official Text) — India Code ↗</a></li>
+              <li><a href="https://www.meity.gov.in/static/uploads/2025/11/c56ceae6c383460ca69577428d36828b.pdf" target="_blank" rel="noopener">MeitY Notification G.S.R. 843(E) — DPDP Act Phased Commencement (13 Nov 2025) ↗</a></li>
+              <li><a href="https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf" target="_blank" rel="noopener">MeitY Notification G.S.R. 846(E) — DPDP Rules, 2025 (Official Gazette) ↗</a></li>
+              <li><a href="https://learn.microsoft.com/en-us/purview/data-map" target="_blank" rel="noopener">Microsoft Purview Data Map Documentation — Microsoft Learn ↗</a></li>
+              <li><a href="https://learn.microsoft.com/en-us/partner-center/announcements/2026-november" target="_blank" rel="noopener">Microsoft Partner Center — November 2026 Product Announcements ↗</a></li>
+              <li><a href="https://learn.microsoft.com/en-us/purview/dlp-microsoft365-copilot-location-learn-about" target="_blank" rel="noopener">Microsoft Purview DLP for Microsoft 365 Copilot — Microsoft Learn ↗</a></li>
+              <li><a href="https://www.iso.org/standard/27701" target="_blank" rel="noopener">ISO/IEC 27701:2025 (PIMS Requirements &amp; Guidance) — ISO ↗</a></li>
+            </ul>
+          </div>
+
           <div class="callout callout-success">
             <strong>Ready to discuss enterprise privacy architecture?</strong><br>
-            Connect with me at <a href="https://lawxtech.in" style="color: #fff; font-weight: 700; text-decoration: underline;">lawxtech.in</a> or download my <a href="../assets/Tarun-Bhatia-Resume.pdf" target="_blank" style="color: #fff; font-weight: 700; text-decoration: underline;">Full Resume (PDF)</a>.
+            Connect with me at <a href="https://lawxtech.in" style="color: #fff; font-weight: 700; text-decoration: underline;">lawxtech.in</a> or email <a href="mailto:tarun@lawxtech.in" style="color: #fff; font-weight: 700; text-decoration: underline;">tarun@lawxtech.in</a>.
           </div>
         </section>
 
@@ -816,14 +1129,14 @@ Set-AdminAuditLogConfig -UnifiedAuditLogIngestionEnabled $true</code></pre>
   <footer>
     <div class="container footer-inner">
       <div class="footer-brand-wrap">
-        <span class="brand-badge" style="width: 26px; height: 26px; font-size: 0.85rem;">âš–ï¸</span>
-        <span>LawXTech Â· Tarun Bhatia</span>
+        <span class="brand-badge" style="width: 26px; height: 26px; font-size: 0.85rem;">⚖️</span>
+        <span>LawXTech · Tarun Bhatia</span>
       </div>
       <div>
-        Bridging Statutory Privacy Law with Cloud Security Engineering.
+        Bridging Statutory Privacy Law with Cloud Security Implementation.
       </div>
       <div>
-        Â© 2026 Tarun Bhatia Â· lawxtech.in
+        © 2026 Tarun Bhatia · lawxtech.in
       </div>
     </div>
   </footer>
@@ -831,4 +1144,3 @@ Set-AdminAuditLogConfig -UnifiedAuditLogIngestionEnabled $true</code></pre>
   <script src="../script.js"></script>
 </body>
 </html>
-
