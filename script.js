@@ -9,31 +9,31 @@ const SCREENSHOTS = [
     id: 1,
     file: '01-entra-employee-directory.png',
     title: 'Figure 01: Workforce Directory Provisioning (26 Users)',
-    caption: 'Provisioned 26 cloud identities in Microsoft Entra ID across Indian operational centers, establishing segregated roles for privacy leadership, IT security, and business operations under DPDP Act Section 8(5).'
+    caption: 'Provisioned 26 cloud identities in Microsoft Entra ID across Indian operational centers, segregating routine business users from compliance leadership (simulated DPO Aadi Dugar) and break-glass administrative accounts under DPDP Act Section 8(5) readiness.'
   },
   {
     id: 2,
     file: '02-entra-security-groups-part1.png',
-    title: 'Figure 02: Departmental Security Group Architecture (Part 1)',
-    caption: 'Established 12 role-segmented Entra Security Groups (SG-NEX-Finance, SG-NEX-HR, SG-NEX-Legal-Compliance) replacing individual user permissions with scalable Zero-Trust RBAC.'
+    title: 'Figure 02: Departmental Security Group Segmentation (Part 1)',
+    caption: 'Established role-segmented Entra Security Groups (SG-NEX-Finance, SG-NEX-HR, SG-NEX-IT-Security) standardizing group-based access control across operational departments.'
   },
   {
     id: 3,
     file: '03-entra-security-groups-part2.png',
-    title: 'Figure 03: Departmental Security Group Architecture (Part 2)',
-    caption: 'Completed departmental segregation ensuring analysts and consultants cannot traverse unauthorized operational silos without documented group membership.'
+    title: 'Figure 03: Departmental Security Group Segmentation (Part 2)',
+    caption: 'Completed departmental segregation ensuring Legal-Compliance, Privacy-Operations, and executive review teams operate within defined organizational boundaries.'
   },
   {
     id: 4,
     file: '04-pim-dpo-eligible-roles.png',
-    title: 'Figure 04: Just-In-Time Privilege Elevation (Entra PIM)',
-    caption: 'Zero standing administrative privileges for the Data Protection Officer (DPO). High-privilege compliance roles are held as Eligible assignments requiring MFA and justification.'
+    title: 'Figure 04: JIT Privilege Elevation via Entra PIM',
+    caption: 'Enforcing zero standing privileges for routine compliance administration. High-privilege roles for the simulated DPO are held as Eligible PIM assignments requiring MFA and business justification.'
   },
   {
     id: 5,
     file: '05-pim-breakglass-admin.png',
-    title: 'Figure 05: Out-of-Band Break-Glass Administrator Isolation',
-    caption: 'Isolated emergency Global Administrator account with 100% cloud-only identity and exclusion from routine operational workflows under ISO 27001 emergency access controls.'
+    title: 'Figure 05: Isolated Break-Glass Recovery Account',
+    caption: 'Isolated emergency Global Administrator account with cloud-only identity and exclusion from routine operational workflows under ISO/IEC 27001:2022 Control 8.2 emergency access governance.'
   },
   {
     id: 6,
@@ -44,20 +44,20 @@ const SCREENSHOTS = [
   {
     id: 7,
     file: '07-azure-all-cloud-resources.png',
-    title: 'Figure 07: Unified Azure Cloud Governance Stack',
-    caption: 'Comprehensive deployment overview encompassing Microsoft Purview account, segregated storage accounts (stnexorafinance001, stnexorahrdev001), and Azure SQL data stores.'
+    title: 'Figure 07: Unified Cloud Resource Overview',
+    caption: 'Overview of deployed Azure resources encompassing Microsoft Purview account (purview-nexora-gov-001), segregated storage accounts (stnexorafinance001, stnexorahrdev001), and SQL data stores.'
   },
   {
     id: 8,
     file: '08-purview-account-rbac.png',
-    title: 'Figure 08: Purview Governance Plane RBAC Lockdown',
-    caption: 'Administrative role-based lockdown on purview-nexora-gov-001 allowing auditors to review compliance policies without permissions to alter classification engines.'
+    title: 'Figure 08: Purview Governance Plane RBAC',
+    caption: 'Administrative role-based access control on purview-nexora-gov-001 allowing auditors to review compliance policies without permissions to alter classification engines.'
   },
   {
     id: 9,
     file: '09-storage-account-rbac.png',
     title: 'Figure 09: Storage Account Management-Plane RBAC',
-    caption: 'Two-tier storage architecture: at the storage account level, security groups hold read-only metadata visibility with zero direct data-plane blob access.'
+    caption: 'Enforcing metadata-only read visibility on stnexorafinance001 with zero direct data-plane blob access at the storage account scope.'
   },
   {
     id: 10,
@@ -68,122 +68,122 @@ const SCREENSHOTS = [
   {
     id: 11,
     file: '11-azure-private-blob-container.png',
-    title: 'Figure 11: Private Blob Container & Public Access Lockdown',
-    caption: 'Strict elimination of anonymous public access on finance-documents container, requiring authenticated Azure AD tokens for all data transactions.'
+    title: 'Figure 11: Private Storage Container Configuration',
+    caption: 'Eliminating anonymous public access on finance-documents container, requiring authenticated Microsoft Entra ID tokens for all data transactions.'
   },
   {
     id: 12,
     file: '12-azure-staged-financial-datasets.png',
     title: 'Figure 12: Staged Financial & Vendor Datasets',
-    caption: 'Production-grade staged datasets (bank_reconciliation.csv, card_transactions_test_only.csv, vendor_master.csv) simulating real B2B enterprise workload.'
+    caption: 'Synthetic test datasets (bank_reconciliation.csv, card_transactions_test_only.csv, vendor_master.csv) simulating enterprise financial workloads with synthetic PAN and cardholder identifiers.'
   },
   {
     id: 13,
     file: '13-purview-datamap-source-registration.png',
-    title: 'Figure 13: Keyless Purview Data Map Source Registration',
+    title: 'Figure 13: Keyless Purview Source Registration',
     caption: 'Registered Azure Blob Storage using System-Assigned Managed Identity authentication, eliminating persistent storage account keys and SAS tokens.'
   },
   {
     id: 14,
     file: '14-purview-unified-catalog-assets.png',
-    title: 'Figure 14: Purview Unified Catalog Asset Indexing',
-    caption: 'Automated metadata scanning and indexing across all storage endpoints, providing real-time visibility into multi-table data assets.'
+    title: 'Figure 14: Unified Catalog Asset Inventory',
+    caption: 'Automated scanning and catalog indexing across cloud storage endpoints, providing inventory visibility into staged financial data assets.'
   },
   {
     id: 15,
     file: '15-purview-bank-reconciliation-schema.png',
-    title: 'Figure 15: Column-Level PII Auto-Classification (India PAN)',
-    caption: 'Purview automated scan detecting India Permanent Account Number (PAN) inside Beneficiary_PAN_TEST column with high statistical confidence.'
+    title: 'Figure 15: Column-Level PII Auto-Detection',
+    caption: 'Automated classification scan identifying India Permanent Account Number (PAN) inside the Beneficiary_PAN_TEST column based on Purview system classifier pattern matches.'
   },
   {
     id: 16,
     file: '16-sensitivity-label-priority-9.png',
-    title: 'Figure 16: Cryptographic Sensitivity Label (Priority 9)',
-    caption: 'Engineered top-priority label Confidential - PII and Financial with AES-256 encryption restricted exclusively to internal enterprise personnel.'
+    title: 'Figure 16: Sensitivity Label Hierarchy & Document Protection (Priority 9)',
+    caption: 'Configured label priority precedence (Priority 9) and Rights Management document protection for Confidential - PII and Financial records.'
   },
   {
     id: 17,
     file: '17-global-label-publishing-policy.png',
-    title: 'Figure 17: Enterprise Label Publishing & Downgrade Justification',
-    caption: 'Mandatory downgrade justification policy published to SG-NEX-All-Employees preventing unauthorized declassification of sensitive corporate data.'
+    title: 'Figure 17: Global Publishing & Downgrade Justification',
+    caption: 'Publishing sensitivity label policy to SG-NEX-All-Employees with mandatory downgrade justification and audit logging.'
   },
   {
     id: 18,
     file: '18-custom-ndis-regex-classifier.png',
     title: 'Figure 18: Custom Healthcare & Patient ID Regex Classifier',
-    caption: 'Engineered custom Sensitive Information Type \\bNDIS-\\d{3}-\\d{3}-\\d{3}\\b paired with healthcare proximity terms to capture structured patient identifiers missed by standard classifiers.'
+    caption: 'Custom Sensitive Information Type configuring regex pattern \bNDIS-\d{3}-\d{3}-\d{3}\b paired with healthcare proximity terms to detect proprietary patient identifiers.'
   },
   {
     id: 19,
     file: '19-auto-labeling-simulation-matches.png',
-    title: 'Figure 19: Auto-Labeling Policy Simulation & Live Matches',
-    caption: 'Simulation engine testing auto-classification rules across Exchange, SharePoint, and OneDrive prior to non-disruptive production rollout.'
+    title: 'Figure 19: Auto-Labeling Simulation Engine',
+    caption: 'Simulation engine testing auto-labeling rules across Exchange, SharePoint, and OneDrive to verify matches prior to policy activation.'
   },
   {
     id: 20,
     file: '20-active-dlp-policies-overview.png',
-    title: 'Figure 20: Active DLP Policy Suite Overview',
-    caption: 'Full synchronization of Nexora-PII-Financial-Leak-Prevention and Nexora-Copilot-PII-Protection across cloud messaging and collaboration workloads.'
+    title: 'Figure 20: Active DLP Policy Suite',
+    caption: 'Tenant synchronization of Nexora-PII-Financial-Leak-Prevention and Nexora-Copilot-PII-Protection across cloud messaging and collaboration workloads.'
   },
   {
     id: 21,
     file: '21-m365-external-dlp-rule.png',
-    title: 'Figure 21: External Data Exfiltration Prevention Rule',
-    caption: 'Real-time rule blocking transmissions containing PAN, Credit Cards, or Patient IDs to external unverified domains.'
+    title: 'Figure 21: External Recipient Blocking Rule',
+    caption: 'Data loss prevention rule configured to intercept sensitive identifiers (PAN, credit card numbers, patient IDs) across Exchange and cloud sharing channels.'
   },
   {
     id: 22,
     file: '22-live-outlook-dlp-block-proof.png',
-    title: 'Figure 22: LIVE PROOF — Real-Time Outlook Exfiltration Interception',
-    caption: 'Live demonstration: Outbound email containing PAN and payment card details to external Gmail blocked immediately with system policy bounce notice.'
+    title: 'Figure 22: LIVE PROOF — Outlook DLP Policy Notification',
+    caption: 'Observed Exchange Online DLP blocking notification during outbound email test containing synthetic PAN, card numbers, and patient IDs.'
   },
   {
     id: 23,
     file: '23-copilot-dlp-policy-config.png',
-    title: 'Figure 23: Microsoft 365 Copilot AI DLP Architecture',
-    caption: 'Dedicated Generative AI guardrails preventing Copilot Chat and Copilot Cowork from ingesting sensitive personal identifiers into AI prompts.'
+    title: 'Figure 23: Microsoft 365 Copilot DLP Configuration',
+    caption: 'Configuring Microsoft 365 Copilot data loss prevention guardrails to inspect prompt submissions for sensitive personal identifiers.'
   },
   {
     id: 24,
     file: '24-live-copilot-prompt-block-proof.png',
-    title: 'Figure 24: LIVE PROOF — Copilot Prompt Interception in Real-Time',
-    caption: 'Live demonstration: Direct prompt injection containing synthetic PAN and Credit Card blocked on submission by Copilot with organizational security policy restriction alert.'
+    title: 'Figure 24: LIVE PROOF — Copilot Prompt Interception',
+    caption: 'Observed prompt interception in Microsoft 365 Copilot Chat blocking submission of synthetic PAN and cardholder data as an automated technical data-security guardrail.'
   },
   {
     id: 25,
     file: '25-sharepoint-finance-portal-datasets.png',
-    title: 'Figure 25: Multi-Tenant SharePoint Financial Repository',
-    caption: 'Restricted corporate team site hosting vendor master databases and invoices subject to statutory data subject access requests.'
+    title: 'Figure 25: SharePoint Finance Portal Repository',
+    caption: 'Restricted enterprise SharePoint site hosting staged vendor master records and invoices for simulated data discovery workflows.'
   },
   {
     id: 26,
     file: '26-ediscovery-dsar-case.png',
-    title: 'Figure 26: Statutory DSAR eDiscovery Premium Case Creation',
-    caption: 'Provisioned formal case DSAR-2026-001-Vendor-and-Employee-Access-Request under Section 11 of the DPDP Act 2023.'
+    title: 'Figure 26: eDiscovery Premium DSAR Case',
+    caption: 'Provisioning case DSAR-2026-001-Vendor-and-Employee-Access-Request as a future-state DPDP Act Section 11 readiness simulation.'
   },
   {
     id: 27,
     file: '27-ediscovery-dsar-search-query.png',
-    title: 'Figure 27: Targeted Discovery Query & Result Isolation',
-    caption: 'KQL search query targeted at Demo Vendor 0002 isolating exactly 3 relevant files (272 KB) while excluding unrelated enterprise transaction logs.'
+    title: 'Figure 27: Targeted DSAR Search Query',
+    caption: 'Targeted search query isolating 3 relevant files (272 KB) associated with Demo Vendor 0002 while filtering out non-responsive enterprise datasets.'
   },
   {
     id: 28,
     file: '28-ediscovery-reviewset-redaction-tag.png',
-    title: 'Figure 28: Third-Party PII Redaction Tagging in Review Set',
-    caption: 'Applied custom Requires-Redaction tag to strip co-located third-party PAN identifiers prior to external disclosure to data principals.'
+    title: 'Figure 28: Third-Party PII Redaction Tagging',
+    caption: 'Applied Requires-Redaction tag to flag co-located third-party records within the review set for disclosure assessment and potential redaction.'
   },
   {
     id: 29,
     file: '29-ediscovery-group-based-rbac.png',
-    title: 'Figure 29: Case-Sandboxed Reviewer RBAC & Chain-of-Custody Audit',
-    caption: 'Assigned Purview Reviewer role group strictly to DSAR-2026-001 with 4-file Chain-of-Custody export (Summary, Locations, Settings, Statistics) backed by Unified Audit Logging.'
+    title: 'Figure 29: Case-Sandboxed Reviewer RBAC & Process Evidence',
+    caption: 'Assigned Purview Reviewer role group strictly to DSAR-2026-001 with 4-file eDiscovery process and audit report export (Summary, Locations, Settings, Statistics).'
   },
   {
     id: 30,
     file: '30-azure-rbac-kql-audit.png',
-    title: 'Figure 30: Azure Resource Graph KQL RBAC Audit (All 11 Assignments)',
-    caption: 'Single KQL query executed in Azure Resource Graph auditing all 11 role assignments across Subscription, Resource Group, Storage Account, and Container levels in under 2 seconds.'
+    title: 'Figure 30: Azure Resource Graph KQL RBAC Audit Output',
+    caption: 'Verified 11-row least-privilege matrix demonstrating configured role separation across Subscription, Resource Group, Storage Account, and Container levels in Azure Resource Graph.'
   }
 ];
 
@@ -324,10 +324,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ── One-Click Code Copy ──
 function copyCode(btn) {
-  const codeBlock = btn.closest('.code-block').querySelector('code');
-  if (!codeBlock) return;
+  const explicitText = btn.getAttribute('data-copy-text');
+  const codeBlock = btn.closest('.code-block')?.querySelector('code');
+  const textToCopy = explicitText !== null ? explicitText : (codeBlock ? codeBlock.innerText : '');
+  if (!textToCopy) return;
   
-  navigator.clipboard.writeText(codeBlock.innerText).then(() => {
+  navigator.clipboard.writeText(textToCopy).then(() => {
     const originalText = btn.textContent;
     btn.textContent = 'Copied!';
     btn.style.color = 'var(--accent-green)';
